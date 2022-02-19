@@ -8,10 +8,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-  <title>offer_done</title>
+  <title>mypage</title>
 </head>
 
 <body>
-  <p>コンパニオンを募集しました</p>
-  <a href="/">トップページへ</a>
+  <div>
+    <a href="/">トップページ</a>
+  </div>
+
+  <div>
+    <a href="/mypage/offer_content">募集している内容を確認する</a>
+  </div>
+
+  <div>
+    <a href="/mypage/reserve_content">予約内容を確認する</a>
+  </div>
+
+  <div>
+    <a href="/mypage/registration_information">登録情報内容を確認する</a>
+  </div>
 </body>

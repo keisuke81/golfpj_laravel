@@ -1,0 +1,51 @@
+.error{
+  color:red;
+  font-size: 0.5em;
+}
+
+ .wrapper {
+    margin-top: 2%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    flex-wrap: wrap;
+  }
+
+  .card{
+    position: relative;
+    margin:1% 1%;
+    width:30%;
+    height:250px;
+    box-shadow:0 0 5px #fff, 0 0 5px #ccc, 0 0 1px #aaa;
+    -webkit-box-shadow:0 0 5px #fff, 0 0 5px #ccc, 0 0 1px #aaa;
+    -moz-box-shadow:0 0 5px #fff, 0 0 5px #ccc, 0 0 1px #aaa;
+
+  }
+
+  .content-img{
+    background-size:contain;
+  }
+
+  img{
+    width:100%;
+  }
+
+  .card_link::after{
+  position:absolute;top:0;right:0;bottom:0;left:0;z-index:1;pointer-events:auto;content:"";background-color:rgba(0,0,0,0)
+}
+
+.follow-btn{
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 9pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 8px 8px;   /* 余白       */
+  background    : #000066;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 2px 2px #666666;  /* 影の設定 */
+  border        : 2px solid #000066;    /* 枠の指定 */
+}
+

@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ClientRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Offer;
 use App\Models\Area;
 use App\Models\Level;
+use App\Models\User;
 
 class OfferController extends Controller
 {
@@ -30,7 +32,7 @@ class OfferController extends Controller
     }
 
     //確認ページに進む//
-    public function Confirm(Request $request){
+    public function Confirm(ClientRequest $request){
         $user = Auth::user();
         $user_id = Auth::id();
 
@@ -58,12 +60,14 @@ class OfferController extends Controller
 
     }
 
-    public function Offer(Request $request)
+    public function Offer(ClientRequest $request)
     {
         $user = Auth::user();
         $user_id = Auth::id();
 
-        
+        if($request->get('back')){
+            return redirect('/offer')->withInput();
+        }
 
         $param = [
             'user_id' => $user_id,
@@ -83,4 +87,111 @@ class OfferController extends Controller
 
         return view('done');
     }
+
+    //募集内容確認ページの表示//
+    public function getOfferContent(Offer $user_id){
+        $user_id = Auth::id();
+        $offers = Offer::where('user_id', $user_id)->get();
+
+        foreach($offers as $offer){
+            //エリア名の表示//
+            $area = Area::where('id', $offer->area_id)->first();
+            $offer->area_name = $area->name;
+
+            //男性レベル名の表示//
+            $level_mens = Level::where('id', $offer->mens_level_id)->first();
+            $offer->mens_level_name = $level_mens->name;
+
+            //求めるレベル名の表示//
+            $level_required = Level::where('id', $offer->required_level_id)->first();
+            $offer->required_level_name = $level_required->name;
+        }
+
+        return view('offer_content')->with(['offers'=>$offers]);
+    }
+
+    //募集内容の削除//
+    public function delete_offer($id){
+
+        $delete_data = new Offer;
+        $delete_data -> where('id', $id)->delete();
+
+        return redirect('/mypage/offer_content');
+    }
+
+    //コンパニオン用検索ページの表示//
+    public function getOfferSearch()
+    {
+        $user_id = Auth::id();
+        $offers = Offer::get();
+
+        foreach ($offers as $offer) {
+            //エリア名の表示//
+            $area = Area::where('id', $offer->area_id)->first();
+            $offer->area_name = $area->name;
+
+            //男性レベル名の表示//
+            $level_mens = Level::where('id', $offer->mens_level_id)->first();
+            $offer->mens_level_name = $level_mens->name;
+
+            //求めるレベル名の表示//
+            $level_required = Level::where('id', $offer->required_level_id)->first();
+            $offer->required_level_name = $level_required->name;
+        }
+
+        return view('offer_search')->with(['offers' => $offers]);
+    }
+
+    //コンパニオン用　日にちで検索//
+    public function getOfferSearchDate(Request $request)
+    {
+        $user_id = Auth::id();
+        $offers = Offer::where('date',$request['search_date'])->get();
+        $search_date = $request['search_date'];
+        
+
+        foreach ($offers as $offer) {
+            //エリア名の表示//
+            $area = Area::where('id', $offer->area_id)->first();
+            $offer->area_name = $area->name;
+
+            //男性レベル名の表示//
+            $level_mens = Level::where('id', $offer->mens_level_id)->first();
+            $offer->mens_level_name = $level_mens->name;
+
+            //求めるレベル名の表示//
+            $level_required = Level::where('id', $offer->required_level_id)->first();
+            $offer->required_level_name = $level_required->name;
+        }
+
+        return view('date')->with([
+            'offers' => $offers,
+            'search_date' => $search_date]);
+    }
+
+    //コンパニオンが応募する//
+    public function companionoffer($id){
+        $user_id = Auth::id();
+        $user = User::where('id', $user_id)->first();
+        $member_id = $user->member_id;
+
+        $offer =  Offer::where('id',$id)->first();
+        $area = Area::where('id', $offer->area_id)->first();
+        $offer->area_name = $area->name;
+
+        //男性レベル名の表示//
+        $level_mens = Level::where('id', $offer->mens_level_id)->first();
+        $offer->mens_level_name = $level_mens->name;
+
+        //求めるレベル名の表示//
+        $level_required = Level::where('id', $offer->required_level_id)->first();
+        $offer->required_level_name = $level_required->name;
+
+
+        return view('companionoffer')->with([
+            'offer' => $offer,
+            'member_id' => $member_id]);
+    }
+
+    
 }

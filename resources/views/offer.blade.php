@@ -2,8 +2,8 @@
 <html lang="ja">
 
 <head>
-  <link href="{{asset('/assets/css/style.css')}}" rel="stylesheet">
-  <link href="{{asset('/assets/css/reset.css')}}" rel="stylesheet">
+  <link href="{{asset('css/style.css')}}" rel="stylesheet">
+  <link href="{{asset('/css/reset.css')}}" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -20,95 +20,181 @@
         <tr>
           <th>日にち</th>
           <td>
-            <input type="date" id="today" name="date" class="reserve_date" value="2021-04-01">
+            <input type="date" name="date" class="reserve_date" value="{{old('date') ?? '2022-01-01'}}">
           </td>
         </tr>
+
+        @if($errors->has('date'))
+        <tr>
+          <th></th>
+          <td>
+            <p class="error">※入力必須です。</p>
+          </td>
+        </tr>
+        @endif
 
         <!--時間-->
         <tr>
           <th>スタート時間</th>
           <td>
-            <input type="time" name="start_at" id="start_at" min="6:30" max="15:00" value="08:30" >
+            <input type="time" name="start_at" id="start_at" min="6:30" max="15:00" value="{{old('start_at') ?? "08:00"}}">
           </td>
-        </tr>        
+        </tr>
+
+        @if($errors->has('start_at'))
+        <tr>
+          <th></th>
+          <td>
+            <p class="error">※入力必須です。</p>
+          </td>
+        </tr>
+        @endif
         <!--エリア-->
         <tr>
           <th>ゴルフ場エリア</th>
           <td>
             <select name="area_id" id="area_id">
-              <option value="0">未定</option>
-              <option value="1">東京</option>
-              <option value="2">神奈川</option>
-              <option value="3">埼玉</option>
-              <option value="4">千葉</option>
-              <option value="5">群馬</option>
-              <option value="6">栃木</option>
-              <option value="7">茨城</option>
-              <option value="8">静岡</option>
+              <option value="0" @if(old('area_id')=='0' ) selected @endif>未定</option>
+              <option value="1" selected @if(old('area_id')=='1' ) selected @endif>東京</option>
+              <option value="2" @if(old('area_id')=='2' ) selected @endif>神奈川</option>
+              <option value="3" @if(old('area_id')=='3' ) selected @endif>埼玉</option>
+              <option value="4" @if(old('area_id')=='4' ) selected @endif>千葉</option>
+              <option value="5" @if(old('area_id')=='5' ) selected @endif>群馬</option>
+              <option value="6" @if(old('area_id')=='6' ) selected @endif>栃木</option>
+              <option value="7" @if(old('area_id')=='7' ) selected @endif>茨城</option>
+              <option value="8" @if(old('area_id')=='8' ) selected @endif>静岡</option>
             </select>
           </td>
         </tr>
+        @if($errors->has('area_id'))
+        <tr>
+          <th></th>
+          <td>
+            <p class="error">※入力必須です。</p>
+          </td>
+        </tr>
+        @endif
 
         <!--ゴルフ場名-->
         <tr>
           <th>ゴルフ場名</th>
           <td>
-            <input type="text" id="golf_course" name="golf_course">
+            <input type="text" id="golf_course" name="golf_course" placeholder="例）ABCカントリークラブ" value="{{old('golf_course')}}">
           </td>
         </tr>
+        @if($errors->has('golf_course'))
+        <tr>
+          <th></th>
+          <td>
+            <p class="error">※入力必須です。未定の場合は「未定」と記載ください。</p>
+          </td>
+          @endif
 
-        <!--男性人数-->
+
+          <!--男性人数-->
         <tr>
           <th>男性の人数</th>
           <td>
-            <input type="number" id="num_of_players_men" name="num_of_players_men" value="2">名
+            <input type="number" id="num_of_players_men" name="num_of_players_men" value="{{old('num_of_players_men') ?? '2'}}">名
           </td>
         </tr>
+
+        @if($errors->has('num_of_players_men'))
+        <tr>
+          <th></th>
+          <td>
+            <p class="error">※入力必須です。</p>
+          </td>
+        </tr>
+        @endif
 
         <!--女性の人数-->
         <tr>
           <th>女性の人数</th>
           <td>
-            <input type="number" id="num_of_players_women" name="num_of_players_women" value="2">名
+            <input type="number" id="num_of_players_women" name="num_of_players_women" value="{{old('num_of_players_women') ?? '2'}}">名
           </td>
         </tr>
+
+        @if($errors->has('num_of_players_women'))
+        <tr>
+          <th></th>
+          <td>
+            <p class="error">※入力必須です。</p>
+          </td>
+        </tr>
+        @endif
 
         <!--男性のレベル-->
         <tr>
           <th>男性のレベル</th>
           <td>
             <select name="mens_level_id" id="mens_level_id">
-              <option value="1">初級（120以上）</option>
-              <option value="2">中級（100~119）</option>
-              <option value="3">上級（99以下）</option>
-              <option value="4">超上級（80以下）</option>
-              <option value="5">特に指定なし</option>
+              <option value="1" @if(old('mens_level_id')=='1' ) selected @endif>初級（120以上）</option>
+              <option value="2" @if(old('mens_level_id')=='2' ) selected @endif>中級（100~119）</option>
+              <option value="3" @if(old('mens_level_id')=='3' ) selected @endif>上級（99以下）</option>
+              <option value="4" @if(old('mens_level_id')=='4' ) selected @endif>超上級（80以下）</option>
+              <option value="5" @if(old('mens_level_id')=='5' ) selected @endif>特に指定なし</option>
             </select>
           </td>
         </tr>
+
+        @if($errors->has('mens_level_id'))
+        <tr>
+          <th></th>
+          <td>
+            <p class="error">※入力必須です。</p>
+          </td>
+        </tr>
+        @endif
 
         <!--求めるレベル-->
         <tr>
           <th>求めるレベル</th>
           <td>
             <select name="required_level_id" id="required_level_id">
-              <option value="1">初級（120以上）</option>
-              <option value="2">中級（100~119）</option>
-              <option value="3">上級（99以下）</option>
-              <option value="4">超上級（80以下）</option>
-              <option value="5">特に指定なし</option>
+              <option value="1" @if(old('required_level_id')=='1' ) selected @endif>初級（120以上）</option>
+              <option value="2" @if(old('required_level_id')=='2' ) selected @endif>中級（100~119）</option>
+              <option value="3" @if(old('required_level_id')=='3' ) selected @endif>上級（99以下）</option>
+              <option value="4" @if(old('required_level_id')=='4' ) selected @endif>超上級（80以下）</option>
+              <option value="5" @if(old('required_level_id')=='5' ) selected @endif>特に指定なし</option>
             </select>
           </td>
         </tr>
+        @if($errors->has('required_level_id'))
+        <tr>
+          <th></th>
+          <td>
+            <p class="error">※入力必須です。</p>
+          </td>
+        </tr>
+        @endif
 
         <!--求める年齢-->
         <tr>
           <th>求める年齢</th>
           <td>
-            <input type="number" id="required_age_min" name="required_age_min" value="20">歳〜 <input type="number" id="required_age_max" name="required_age_max" value="30">歳
+            <input type="number" id="required_age_min" name="required_age_min" value="{{old('required_age_min') ?? '20'}}">歳〜 <input type="number" id="required_age_max" name="required_age_max" value="{{old('required_age_max') ?? '30'}}">歳
           </td>
         </tr>
 
+        @if($errors->has('required_age_min'))
+        <tr>
+          <th></th>
+          <td>
+            <p class="error">※20歳以上で入力してください。</p>
+          </td>
+        </tr>
+        @endif
+
+        @if($errors->has('required_age_max'))
+        <tr>
+          <th></th>
+          <td>
+            <p class="error">※上限年齢が下限年齢を下回っています。</p>
+          </td>
+        </tr>
+        @endif
         <!--オファーするユーザー名-->
         <input type="hidden" name="user_id" id="user_id" value={{$user_id}}>
         <!--オファーするユーザーの年齢-->
@@ -116,7 +202,7 @@
       </table>
 
       <!--申し込みフォーム-->
-      <button>コンパニオンを募集する</button>
+      <button>確認画面に進む</button>
     </form>
   </div>
 

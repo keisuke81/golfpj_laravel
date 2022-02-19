@@ -2,8 +2,8 @@
 <html lang="ja">
 
 <head>
-  <link href="{{asset('/assets/css/style.css')}}" rel="stylesheet">
-  <link href="{{asset('/assets/css/reset.css')}}" rel="stylesheet">
+  <link href="{{asset('css/style.css')}}" rel="stylesheet">
+  <link href="{{asset('/css/reset.css')}}" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -41,6 +41,15 @@
         <td>
           <input type="hidden" name="area_id" value="{{$inputs['area_id']}}">
           {{$area_name}}
+        </td>
+      </tr>
+
+      <!--ゴルフ場名-->
+      <tr>
+        <th>ゴルフ場名</th>
+        <td>
+          <input type="hidden" id="golf_course" name="golf_course" value="{{$inputs['golf_course']}}">
+          {{$inputs['golf_course']}}
         </td>
       </tr>
 
@@ -96,6 +105,8 @@
     </table>
 
     <!--申し込みフォーム-->
-    <button>コンパニオンを募集する</button>
+    <button name="offer" value="ture">コンパニオンを募集する</button>
+    <button name="back" value="true">内容を修正する</button>
   </form>
+
 </body>

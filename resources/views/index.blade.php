@@ -2,8 +2,8 @@
 <html lang="ja">
 
 <head>
-  <link href="{{asset('/assets/css/style.css')}}" rel="stylesheet">
-  <link href="{{asset('/assets/css/reset.css')}}" rel="stylesheet">
+  <link href="{{asset('css/style.css')}}" rel="stylesheet">
+  <link href="{{asset('/css/reset.css')}}" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -17,7 +17,17 @@
     <a href="/login">ログインする</a>
   </div>
   <div>
-    <a href="/offer">ゴルフに誘う</a>
+    <a href="/offer">日にちで誘う（男性用）</a>
+  </div>
+  <div>
+    <a href="/offer_cast">キャストから誘う</a>
+  </div>
+
+  <div>
+    <a href="/offer_search">参加できる予定を探す（コンパニオン用）</a>
+  </div>
+  <div>
+    <a href="/mypage">マイページ</a>
   </div>
 
 </body>

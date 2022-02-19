@@ -1,3 +1,6 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
 @extends('layouts.app')
 
 @section('content')
@@ -25,14 +28,47 @@
                             </div>
                         </div>
 
+                        <!--会員No.-->
+                        <?php
+
+                        use App\Models\User;
+
+                        $member_ids = User::select('member_id')->get();
+                        
+                        $min = 10000;
+                        $max = 99999;
+
+                        for ($i = $min; $i <= $max; $i++) {
+                            while (true) {
+                                /** 一時的な乱数を作成 */
+                                $member_id = mt_rand($min, $max);
+
+                                /*
+     * 乱数配列に含まれているならwhile続行、
+     * 含まれてないなら配列に代入してbreak
+     */
+                                if (!in_array($member_id, (array)$member_ids)) {
+                                    break;
+                                }
+                            }
+                        }
+                        ?>
+
+                        <input type="hidden" name="member_id" value="{{$member_id}}">
+
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('性別') }}</label>
+                            <label for="gender" class="col-md-4 col-form-label text-md-end">{{ __('性別') }}</label>
 
                             <div class="col-md-6">
-                                <input id="gender" type="radio" class="form-control" name="gender" value="1">男性
+                                <input id="gender" type="radio" class="form-control" name="gender" value="1" checked>男性
 
-                                <input id="gender" type="radio" class="form-control" name="gender" value="2">女性
+                                <input id="gender" type="radio" class="form-control" name="gender" value="2">女性（コンパニオン）
                             </div>
+                        </div>
+
+                        <div>
+                            <label for="birthday">誕生日</label>
+                            <input type="date" name="birthday" value="1995-05-05">
                         </div>
 
                         <div class="row mb-3">

@@ -1,0 +1,52 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+
+
+class Companion extends Model
+{
+    use HasFactory;
+
+    protected $fillable=[
+            'name',
+            'companion_id',
+            'gender',
+            'email',
+            'password',
+            'nickname',
+            'birthday',
+            'age',
+            'img_url',
+            'score',
+            'self_produce',
+            'message'
+    ];
+
+
+    public function follows()
+    {
+        return $this->hasMany(Follow::class, 'companion_id');
+    }
+
+    //フォローボタンの切り替え//
+    public function is_followed_by_auth_user()
+    {
+        $id = Auth::id();
+
+        $followers = array();
+        foreach ($this->follows as $follow) {
+            array_push($followers, $follow->member_id);
+        }
+
+        if (in_array($id, $followers)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+}
