@@ -93,11 +93,12 @@ Route::get('companion_offer/{id}',
     [OfferController::class, 'companionoffer']
 )->name('companionoffer');
 
-//チャット画面の表示//
-Route::get('/chat/{id}',[
-    ChatController::class,'getChat'
-])->name('getChat');
+
 
 //チャットの受け取りと送信//
-Route::get('/chat/{recieve}', 'ChatController@index')->name('chat');
-Route::post('/chat/send', 'ChatController@store')->name('chatSend');
+Route::get('/chat/{recieve}', [
+    ChatController::class, 'index'
+])->name('chat');
+
+Route::post('/chat/send', 
+[ChatController::class, 'store'])->name('chatSend');

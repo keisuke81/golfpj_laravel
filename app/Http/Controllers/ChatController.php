@@ -5,22 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mail\SampleNotification;
 use App\Events\ChatMessageRecieved;
-use App\Message;
+use App\Models\Message;
+use App\Models\Chat;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
+ini_set('display_errors', 1);
+
 class ChatController extends Controller
 {
-    public function getChat(){
-        return view('chat');
-    }
 
     public function __construct()
     {
     }
 
 
-    public function index(Request $request, $recieve)
+    public function index($recieve)
     {
         // チャットの画面
         $loginId = Auth::id();
@@ -31,7 +32,8 @@ class ChatController extends Controller
         ];
 
         // 送信 / 受信のメッセージを取得する
-        $query = Message::where('send', $loginId)->where('recieve', $recieve);;
+        $query = Chat::where('send', $loginId)->where('recieve', $recieve);
+
         $query->orWhere(function ($query) use ($loginId, $recieve) {
             $query->where('send', $recieve);
             $query->where('recieve', $loginId);
@@ -39,7 +41,10 @@ class ChatController extends Controller
 
         $messages = $query->get();
 
-        return view('chat', compact('param', 'messages'));
+        return view('chat')->with([
+            'param' => $param,
+            'messages' => $messages
+        ]);
     }
 
     /**
@@ -47,30 +52,16 @@ class ChatController extends Controller
      */
     public function store(Request $request)
     {
-
-        // リクエストパラメータ取得
-        $insertParam = [
-            'send' => $request->input('send'),
-            'recieve' => $request->input('recieve'),
-            'message' => $request->input('message'),
-        ];
-
-
-        // メッセージデータ保存
-        try {
-            Message::insert($insertParam);
-        } catch (\Exception $e) {
-            return false;
-        }
-
-
         // イベント発火
         event(new ChatMessageRecieved($request->all()));
 
-        // メール送信
-        $mailSendUser = User::where('id', $request->input('recieve'))->first();
-        $to = $mailSendUser->email;
-        Mail::to($to)->send(new SampleNotification());
+        // リクエストパラメータ取得
+        $param = [
+            'send' => $request->send,
+            'recieve' => $request->recieve,
+            'message' => $request->message
+        ];
+        Chat::insert($param);
 
         return true;
     }

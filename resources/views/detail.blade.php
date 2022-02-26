@@ -34,7 +34,7 @@
   </div>
 
   <div>
-    <a href="{{route('getChat', ['id' => $item->id])}}">Chat</a>
+    <a href="/chat/{{$item->id}}">Chat</a>
   </div>
 
 </body>
