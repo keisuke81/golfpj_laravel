@@ -12,59 +12,72 @@
 </head>
 
 <body>
-  <a href="/menu1" class="menu-toggle">
-    <a href="/menu1">
-      <div></div>
-      <div></div>
-      <div></div>
-    </a>
-  </a>
-  </div>
+  <header>
+    <h1>LUANA MATCHING</h1>
+    <nav class="gnav">
+      <ul class="menu">
+        <li><a href="/home">ホーム</a></li>
+        <li><a href="/offer_cast">キャスト検索</a></li>
+        <li><a href="/chat_select">チャット</a></li>
+        <li><a href="/mypage">マイページ</a></li>
+      </ul>
+    </nav>
+  </header>
 </body>
 
 <style scoped>
-  .menu-toggle {
-    z-index: 0;
-    float: left;
-    overflow: hidden;
-    position: relative;
-    top: 10px;
-    left: 10px;
-    height: 34px;
-    width: 44px;
-    display: block;
+  body {
+    padding-top: 90px;
+    /* ヘッダーの後ろに要素が隠れないようにするため */
+  }
+
+  header {
+    z-index: 1000;
+    width: 100%;
+    /* 幅いっぱいを指定 */
+    height: 50px;
+    /* 高さを50pxに指定 */
+    background: #CCC;
+    /* 背景色にグレーを指定 */
+    padding: 20px 50px;
+    /* ヘッダーに上下左右それぞれ余白を指定 */
     box-sizing: border-box;
-    background-color: blue;
-    border: none;
-    padding: 6px 10px;
-    margin:1% 100% 3% 1%;
-    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.25);
+    /* padding分を含んで幅を100%にするため */
+    position: fixed;
+    /* ウィンドウを基準に画面に固定 */
+    top: 0;
+    /* 上下の固定位置を上から0pxにする */
+    left: 0;
+    /* 左右の固定位置を左から0pxにする */
+    display: flex;
+    /* 中の要素を横並びにする */
+    align-items: center;
+    /* 中の要素を上下中央に並べる */
   }
 
-  .menu-toggle div {
-
-    position: absolute;
-    overflow: hidden;
-    left: 10px;
-    height: 2px;
-    background-color: #fff;
-    border-radius: 1px;
-    display: inline-block;
-    box-sizing: border-box;
+  header .gnav .menu {
+    display: flex;
+    /* 中の要素を横並びにする */
   }
 
-  .menu-toggle div:nth-of-type(1) {
-    top: 6px;
-    width: 8px;
+  header .gnav .menu li {
+    list-style: none;
+    /* リストの[・]を消す */
   }
 
-  .menu-toggle div:nth-of-type(2) {
-    top: 16px;
-    width: 24px;
+  header .gnav .menu li+li {
+    margin-left: 40px;
+    /* メニューそれぞれに間隔をあけるため */
   }
 
-  .menu-toggle div:nth-of-type(3) {
-    bottom: 6px;
-    width: 8px;
+  h1 {
+    margin-right: 40px;
   }
+
+  a {
+    text-decoration: none;
+    height: 50px;
+  }
+
+
 </style>

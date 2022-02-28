@@ -15,22 +15,22 @@
   @component('components.menu')
   @endcomponent
   <div>
-    <a href="/">トップページ</a>
+    <a href="/home">トップページ</a>
   </div>
 
   <div>
-    <a href="/mypage/offer_content">募集している内容を確認する</a>
+    <a class="btn" href="/mypage/offer_content">募集している内容を確認する</a>
   </div>
 
   <div>
-    <a href="/mypage/reserve_content">予約内容を確認する</a>
+    <a class="btn" href="/mypage/reserve_content">予約内容を確認する</a>
   </div>
 
   <div>
-    <a href="/chat_select">チャット</a>
+    <a class="btn" href="/chat_select">チャット</a>
   </div>
 
   <div>
-    <a href="/mypage/registration_information">登録情報内容を確認する</a>
+    <a class="btn" href="/mypage/registration_information">登録情報内容を確認する</a>
   </div>
 </body>

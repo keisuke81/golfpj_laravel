@@ -16,11 +16,9 @@
   　@auth
   <div class="menu1_content">
     <div class="content">
-      <a href="/">Home</a>
+      <a href="/home">Home</a>
     </div>
-    <div class="content">
-      <a href="/logout">Logout</a>
-    </div>
+
     <div class="content">
       <a href="/mypage">Mypage</a>
     </div>
@@ -30,7 +28,7 @@
   @guest
   <div class="menu1_content">
     <div class="content">
-      <a href="/">Home</a>
+      <a href="/home">Home</a>
     </div>
     <div class="content">
       <a href="/register">Registration</a>

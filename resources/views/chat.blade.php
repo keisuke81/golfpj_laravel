@@ -26,29 +26,32 @@
       @foreach($messages as $key => $message)
       {{-- 送信したメッセージ  --}}
       @if($message->send == \Illuminate\Support\Facades\Auth::id())
-      <div class="send" style="text-align: right">
-        <p>{{$message->message}}</p>
+      <div class="balloon01">
+        <div class="icon01"></div>
+        <div class="send">
+          <p>{{$message->message}}</p>
+        </div>
       </div>
-
       @endif
 
       {{-- 受信したメッセージ  --}}
       @if($message->recieve == \Illuminate\Support\Facades\Auth::id())
-      <div class="recieve" style="text-align: left">
-        <p>{{$message->message}}</p>
-      </div>
+        <div class="icon02"></div>
+        <div class="recieve" style="text-align: left">
+          <p>{{$message->message}}</p>
+        </div>
       @endif
       @endforeach
     </div>
 
-    <form　action=" /chat/send" method="post">
+    <form　action="/chat/send" method="post">
       @csrf
       <textarea name="message" id="text" style="width:100%"></textarea>
-      <input type="hidden" name="send" value="{{$param['send']}}">
-      <input type="hidden" name="recieve" value="{{$param['recieve']}}">
-      <input type="hidden" name="login" value="{{\Illuminate\Support\Facades\Auth::id()}}">
       <button type="button" id="btn_send">送信</button>
     </form>
+    <input type="hidden" name="send" value="{{$param['send']}}">
+    <input type="hidden" name="recieve" value="{{$param['recieve']}}">
+    <input type="hidden" name="login" value="{{\Illuminate\Support\Facades\Auth::id()}}">
 
   </div>
 
@@ -70,9 +73,9 @@
       let login = $('input[name="login"]').val();
 
       if (data.send === login) {
-        appendText = '<div class="send" style="text-align:right"><p>' + data.message + '</p></div> ';
+        appendText = '<div class="send" style="text-align:right"><p>' + data.message + '</p></div>' ;
       } else if (data.recieve === login) {
-        appendText = '<div class="recieve" style="text-align:left"><p>' + data.message + '</p></div> ';
+        appendText = '<div class="recieve" style="text-align:left"><p>' + data.message + '</p></div>' ;
       } else {
         return false;
       }

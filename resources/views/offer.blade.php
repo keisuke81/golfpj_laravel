@@ -14,10 +14,10 @@
 <body>
   @component('components.menu')
   @endcomponent
-  <div>
+  <div class="wrapper_block">
     <form action="/confirm" method="post">
       @csrf
-      <table class="table offer_table">
+      <table class="table">
         <!--日にち-->
         <tr>
           <th>日にち</th>
@@ -204,7 +204,7 @@
       </table>
 
       <!--申し込みフォーム-->
-      <button>確認画面に進む</button>
+      <button class="bigger">確認画面に進む</button>
     </form>
   </div>
 

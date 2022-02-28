@@ -12,7 +12,9 @@
 </head>
 
 <body>
-  <div>
+  @component('components.menu')
+  @endcomponent
+  <div class="wrapper">
     <table class="table">
       <thead>
         <tr>

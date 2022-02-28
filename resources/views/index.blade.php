@@ -14,22 +14,10 @@
 <body>
   @component('components.menu')
   @endcomponent
-  <div>
-    <a href="/register">新規登録する</a>
-    <a href="/login">ログインする</a>
-  </div>
-  <div>
-    <a href="/offer">日にちで誘う（男性用）</a>
-  </div>
-  <div>
-    <a href="/offer_cast">キャストから誘う</a>
+  <div class="wrapper">
+    <a class="btn" href="/register">新規登録する</a>
+    <a class="btn" href="/login">ログインする</a>
   </div>
 
-  <div>
-    <a href="/offer_search">参加できる予定を探す（コンパニオン用）</a>
-  </div>
-  <div>
-    <a href="/mypage">マイページ</a>
-  </div>
 
 </body>
