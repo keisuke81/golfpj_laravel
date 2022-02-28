@@ -12,6 +12,8 @@
 </head>
 
 <body>
+  @component('components.menu')
+  @endcomponent
   <div>
     <p>年齢で絞る</p>
     <form action="/offer_cast_age">
@@ -32,6 +34,9 @@
       </a>
       <div>
         <p>年齢：{{$item->age}}</p>
+      </div>
+      <div>
+        <p>ベストスコア：{{$item->score}}</p>
       </div>
     </div>
     @endforeach

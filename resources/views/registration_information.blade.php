@@ -12,16 +12,10 @@
 </head>
 
 <body>
+  @component('components.menu')
+  @endcomponent
   <h1>プロフィール</h1>
   <table class="table">
-    <tr>
-      <th>会員No.</th>
-      <td>
-        {{$registration->member_id}}
-      </td>
-    </tr>
-
-
     <tr>
       <th>お名前</th>
       <td>

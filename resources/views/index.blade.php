@@ -12,6 +12,8 @@
 </head>
 
 <body>
+  @component('components.menu')
+  @endcomponent
   <div>
     <a href="/register">新規登録する</a>
     <a href="/login">ログインする</a>

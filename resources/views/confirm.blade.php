@@ -12,6 +12,8 @@
 </head>
 
 <body>
+  @component('components.menu')
+  @endcomponent
   <h1>応募内容内容確認</h1>
 
   <!--フォーム開始-->

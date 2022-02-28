@@ -13,6 +13,8 @@
 
 <body onload="init()" onunload="init2()">
 
+  @component('components.menu')
+  @endcomponent
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2">

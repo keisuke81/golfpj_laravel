@@ -14,8 +14,7 @@ class CreateCompanionsTable extends Migration
     public function up()
     {
         Schema::create('companions', function (Blueprint $table) {
-            $table->unsignedBigInteger('id')->autoIncrement();
-            $table->string('companion_id')->unique();
+            $table->unsignedBigInteger('id')->autoIncrement()->startingValue(100000);
             $table->string('name');
             $table->string('gender');
             $table->string('email')->unique();

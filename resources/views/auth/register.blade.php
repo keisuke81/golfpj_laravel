@@ -28,34 +28,6 @@
                             </div>
                         </div>
 
-                        <!--会員No.-->
-                        <?php
-
-                        use App\Models\User;
-
-                        $member_ids = User::select('member_id')->get();
-                        
-                        $min = 10000;
-                        $max = 99999;
-
-                        for ($i = $min; $i <= $max; $i++) {
-                            while (true) {
-                                /** 一時的な乱数を作成 */
-                                $member_id = mt_rand($min, $max);
-
-                                /*
-     * 乱数配列に含まれているならwhile続行、
-     * 含まれてないなら配列に代入してbreak
-     */
-                                if (!in_array($member_id, (array)$member_ids)) {
-                                    break;
-                                }
-                            }
-                        }
-                        ?>
-
-                        <input type="hidden" name="member_id" value="{{$member_id}}">
-
                         <div class="row mb-3">
                             <label for="gender" class="col-md-4 col-form-label text-md-end">{{ __('性別') }}</label>
 

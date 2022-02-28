@@ -12,19 +12,13 @@
 </head>
 
 <body>
+  @component('components.menu')
+  @endcomponent
   <a href="/mypage">マイページに戻る</a>
 
   <form action="/profile_update" method="post">
     @csrf
     <table class="table">
-      <tr>
-        <th>会員No.</th>
-        <td>
-          {{$registration->member_id}}
-        </td>
-      </tr>
-
-
       <tr>
         <th>お名前</th>
         <td>

@@ -15,8 +15,7 @@ class CompanionsTableSeeder extends Seeder
     public function run()
     {
         $param = [
-            'id' => 1,
-            'companion_id'=>1000,
+
             'gender'=>2,
             'email'=>'kanako@gmail.com',
             'name' => '前田かなこ',
@@ -29,8 +28,7 @@ class CompanionsTableSeeder extends Seeder
         DB::table('companions')->insert($param);
 
         $param = [
-            'id' => 2,
-            'companion_id' => 1001,
+
             'gender' => 2,
             'email' => 'sakura@gmail.com',
             'name' => '田中さくら',
@@ -43,8 +41,7 @@ class CompanionsTableSeeder extends Seeder
         DB::table('companions')->insert($param);
 
         $param = [
-            'id' => 3,
-            'companion_id' => 1002,
+
             'gender' => 2,
             'email' => 'emiko@gmail.com',
             'name' => '山本えみこ',
@@ -57,8 +54,7 @@ class CompanionsTableSeeder extends Seeder
         DB::table('companions')->insert($param);
 
         $param = [
-            'id' => 4,
-            'companion_id' => 1003,
+
             'gender' => 2,
             'email' => 'yuki@gmail.com',
             'name' => '樋口ゆき',
@@ -71,8 +67,7 @@ class CompanionsTableSeeder extends Seeder
         DB::table('companions')->insert($param);
 
         $param = [
-            'id' => 5,
-            'companion_id' => 1004,
+
             'gender' => 2,
             'email' => 'misa@gmail.com',
             'name' => '佐々木みさ',
@@ -85,8 +80,7 @@ class CompanionsTableSeeder extends Seeder
         DB::table('companions')->insert($param);
 
         $param = [
-            'id' => 6,
-            'companion_id' => 1005,
+
             'gender' => 2,
             'email' => 'jun@gmail.com',
             'name' => '佐藤じゅん',
@@ -99,8 +93,7 @@ class CompanionsTableSeeder extends Seeder
         DB::table('companions')->insert($param);
 
         $param = [
-            'id' => 7,
-            'companion_id' => 1006,
+
             'gender' => 2,
             'email' => 'erika@gmail.com',
             'name' => '本田えりか',
@@ -113,8 +106,7 @@ class CompanionsTableSeeder extends Seeder
         DB::table('companions')->insert($param);
 
         $param = [
-            'id' => 8,
-            'companion_id' => 1007,
+
             'gender' => 2,
             'email' => 'nanako@gmail.com',
             'name' => '山崎ななこ',
@@ -127,8 +119,7 @@ class CompanionsTableSeeder extends Seeder
         DB::table('companions')->insert($param);
 
         $param = [
-            'id' => 9,
-            'companion_id' => 1008,
+
             'gender' => 2,
             'email' => 'shiori@gmail.com',
             'name' => '佐藤しおり',
@@ -141,8 +132,7 @@ class CompanionsTableSeeder extends Seeder
         DB::table('companions')->insert($param);
 
         $param = [
-            'id' => 10,
-            'companion_id' => 1009,
+
             'gender' => 2,
             'email' => 'riho@gmail.com',
             'name' => '高橋りほ',

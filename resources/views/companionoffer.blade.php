@@ -12,6 +12,8 @@
 </head>
 
 <body>
+  @component('components.menu')
+  @endcomponent
   <p>募集内容</p>
   <table class="table offer_table">
     <!--日にち-->

@@ -23,6 +23,11 @@ class OfferController extends Controller
         $this->middleware(['auth', 'verified'])->only(['ShowOffer']);
     }
 
+    //メニューの表示//
+    public function showMenu(){
+        return view('menu_detail');
+    }
+
     //ゴルフに誘うページの表示//
     public function ShowOffer(){
         $user_id = Auth::id();

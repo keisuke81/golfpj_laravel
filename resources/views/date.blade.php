@@ -12,6 +12,8 @@
 </head>
 
 <body>
+  @component('components.menu')
+  @endcomponent
   <h1>コンパニオン募集中</h1>
   <div>
     <p>日にちで検索する</p>

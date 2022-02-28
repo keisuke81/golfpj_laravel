@@ -12,6 +12,8 @@
 </head>
 
 <body>
+  @component('components.menu')
+  @endcomponent
   <h1>コンパニオン募集内容</h1>
   <div>
     <a href="/mypage">マイページへ戻る</a>

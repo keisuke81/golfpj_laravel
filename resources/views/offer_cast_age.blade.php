@@ -12,6 +12,8 @@
 </head>
 
 <body>
+  @component('components.menu')
+  @endcomponent
   <div>
     <p>年齢で絞る</p>
     <form action="/offer_cast_age">

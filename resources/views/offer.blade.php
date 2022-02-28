@@ -12,6 +12,8 @@
 </head>
 
 <body>
+  @component('components.menu')
+  @endcomponent
   <div>
     <form action="/confirm" method="post">
       @csrf

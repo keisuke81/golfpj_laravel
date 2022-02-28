@@ -13,7 +13,7 @@ class Companion extends Model
 
     protected $fillable=[
             'name',
-            'companion_id',
+            'id',
             'gender',
             'email',
             'password',

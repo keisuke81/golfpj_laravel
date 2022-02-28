@@ -12,6 +12,8 @@
 </head>
 
 <body>
+  @component('components.menu')
+  @endcomponent
   <div>
     <a href="/">トップページ</a>
   </div>
@@ -22,6 +24,10 @@
 
   <div>
     <a href="/mypage/reserve_content">予約内容を確認する</a>
+  </div>
+
+  <div>
+    <a href="/chat_select">チャット</a>
   </div>
 
   <div>

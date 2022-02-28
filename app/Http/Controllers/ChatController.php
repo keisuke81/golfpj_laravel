@@ -7,11 +7,12 @@ use App\Mail\SampleNotification;
 use App\Events\ChatMessageRecieved;
 use App\Models\Message;
 use App\Models\Chat;
+use App\Models\Follow;
+use App\Models\Companion;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
-ini_set('display_errors', 1);
 
 class ChatController extends Controller
 {
@@ -65,4 +66,20 @@ class ChatController extends Controller
 
         return true;
     }
+
+    //チャット選択画面の表示//
+    public function showChatselect(){
+        $id = Auth::id();
+        $users = Follow::where('member_id', $id)->get();
+        foreach($users as $user){
+            $companion = Companion::where('id', $user->companion_id)->first();
+            $user->nickname = $companion->nickname;
+        }
+
+        // チャットユーザ選択画面を表示
+        return view('chat_select')->with([
+            'users'=> $users,
+        ]);
+    }
+
 }

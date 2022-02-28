@@ -12,6 +12,8 @@
 </head>
 
 <body>
+  @component('components.menu')
+  @endcomponent
   <p>コンパニオンを募集しました</p>
   <a href="/">トップページへ</a>
 </body>

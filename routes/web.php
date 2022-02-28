@@ -24,6 +24,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
+//メニューの表示//
+Route::get('/menu1',[OfferController::class, 'showMenu']);
+
 //トップページの表示//
 Route::get('/',
 [OfferController::class, 'index']);
@@ -102,3 +105,7 @@ Route::get('/chat/{recieve}', [
 
 Route::post('/chat/send', 
 [ChatController::class, 'store'])->name('chatSend');
+
+//チャット選択画面の表示//
+Route::get('/chat_select',
+[ChatController::class,'showChatselect']);

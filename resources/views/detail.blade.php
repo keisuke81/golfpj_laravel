@@ -12,6 +12,8 @@
 </head>
 
 <body>
+  @component('components.menu')
+  @endcomponent
   <div>
     <a href="/offer_cast">コンパニオン一覧</a>
   </div>
