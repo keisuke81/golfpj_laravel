@@ -2,6 +2,8 @@
 
 <head>
   <title>Pusher Test</title>
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/reset.css" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -36,15 +38,15 @@
 
       {{-- 受信したメッセージ  --}}
       @if($message->recieve == \Illuminate\Support\Facades\Auth::id())
-        <div class="icon02"></div>
-        <div class="recieve" style="text-align: left">
-          <p>{{$message->message}}</p>
-        </div>
+      <div class="icon02"></div>
+      <div class="recieve" style="text-align: left">
+        <p>{{$message->message}}</p>
+      </div>
       @endif
       @endforeach
     </div>
 
-    <form　action="/chat/send" method="post">
+    <form　action=" /chat/send" method="post">
       @csrf
       <textarea name="message" id="text" style="width:100%"></textarea>
       <button type="button" id="btn_send">送信</button>
@@ -73,9 +75,9 @@
       let login = $('input[name="login"]').val();
 
       if (data.send === login) {
-        appendText = '<div class="send" style="text-align:right"><p>' + data.message + '</p></div>' ;
+        appendText = '<div class="send" style="text-align:right"><p>' + data.message + '</p></div>';
       } else if (data.recieve === login) {
-        appendText = '<div class="recieve" style="text-align:left"><p>' + data.message + '</p></div>' ;
+        appendText = '<div class="recieve" style="text-align:left"><p>' + data.message + '</p></div>';
       } else {
         return false;
       }
