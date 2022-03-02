@@ -5,6 +5,7 @@ use App\Http\Controllers\OfferController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CompanionController;
+use App\Http\Controllers\Auth\LoginController;
 
 
 /*
@@ -21,6 +22,10 @@ use App\Http\Controllers\CompanionController;
 Route::get('/register', [UserController::class, 'index']);
 
 Auth::routes();
+
+Route::get('/logout', [LoginController::class, 'destroy'])
+    ->middleware('auth')
+    ->name('logout');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 

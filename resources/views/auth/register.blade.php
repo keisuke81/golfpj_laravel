@@ -7,14 +7,15 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card_register">
+                <div class="card_register_child">
                 <div class="card-header">{{ __('新規登録') }}</div>
 
-                <div class="card-body">
+                <div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="row mb-3">
+                        <div class="row mb-3 register_label">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('お名前') }}</label>
 
                             <div class="col-md-6">
@@ -28,19 +29,20 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="gender" class="col-md-4 col-form-label text-md-end">{{ __('性別') }}</label>
+                     
 
                             <div class="col-md-6">
-                                <input id="gender" type="radio" class="form-control" name="gender" value="1" checked>男性
+                                <input id="gender" type="hidden" class="form-control" name="gender" value="1" checked>
 
-                                <input id="gender" type="radio" class="form-control" name="gender" value="2">女性（コンパニオン）
+                                <input id="gender" type="hidden" class="form-control" name="gender" value="2">
                             </div>
                         </div>
 
                         <div>
                             <label for="birthday">誕生日</label>
-                            <input type="date" name="birthday" value="1995-05-05">
+                            <div>
+                                <input type="date" name="birthday" value="1995-05-05">
+                            </div>    
                         </div>
 
                         <div class="row mb-3">
@@ -88,6 +90,7 @@
                         </div>
                     </form>
                 </div>
+            </div>
             </div>
         </div>
     </div>
