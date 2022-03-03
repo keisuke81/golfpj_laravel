@@ -1,7 +1,6 @@
 <head>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/reset.css" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('css/reset.css')}}" rel="stylesheet">
 </head>
 @extends('layouts.app')
 

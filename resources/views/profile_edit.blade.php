@@ -2,8 +2,8 @@
 <html lang="ja">
 
 <head>
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/reset.css" rel="stylesheet">
+  <link href="{{asset('css/style.css')}}" rel="stylesheet">
+  <link href="{{asset('css/reset.css')}}" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -14,7 +14,7 @@
 <body>
   @component('components.menu')
   @endcomponent
-  <a href="/mypage">マイページに戻る</a>
+  <a class="btn_small" href="/mypage">マイページに戻る</a>
 
   <form action="/profile_update" method="post">
     @csrf
