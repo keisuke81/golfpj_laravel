@@ -76,6 +76,10 @@ Route::get('/mypage/offer_content',
 Route::get('mypage/delete_offer/{id}',
 [OfferController::class, 'delete_offer'])->name('delete_offer');
 
+Route::get('/mypage/reserve_content',[
+    OfferController::class, 'getReserveContent'
+]);
+
 //コンパニオン用検索ページの表示//
 Route::get('offer_search',
 [OfferController::class, 'getOfferSearch']);
@@ -114,3 +118,5 @@ Route::post('/chat/send',
 //チャット選択画面の表示//
 Route::get('/chat_select',
 [ChatController::class,'showChatselect']);
+
+

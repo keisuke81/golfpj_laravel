@@ -88,6 +88,7 @@ a.btn{
 	border-radius: 3px;
 	transition: .4s;
   margin:10px 5px;
+  cursor: pointer;
 }
 
 a.btn:hover {
@@ -115,6 +116,7 @@ a.nav-link{
 	border-radius: 3px;
 	transition: .4s;
   margin:5px 3px;
+  cursor: pointer;
 }
 
 a.btn_small:hover,
@@ -138,6 +140,7 @@ a.btn_small_center{
 	border-radius: 3px;
 	transition: .4s;
   margin:5px auto;
+  cursor: pointer;
 }
 
 a.btn_small_center:hover {
@@ -167,6 +170,7 @@ button{
 	border-radius: 3px;
 	transition: .4s;
   margin:10px 5px;
+  cursor: pointer;
 }
 .name_font{
   font-size: 1.3em;

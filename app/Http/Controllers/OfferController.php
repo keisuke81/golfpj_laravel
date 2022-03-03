@@ -198,5 +198,7 @@ class OfferController extends Controller
             'member_id' => $member_id]);
     }
 
-    
+    public function getReserveContent(){
+        return view('reserve_content');
+    }
 }
