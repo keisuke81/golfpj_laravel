@@ -1,4 +1,5 @@
 <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <link href="{{asset('css/reset.css')}}" rel="stylesheet">
 </head>
