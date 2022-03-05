@@ -1,6 +1,5 @@
 @component('components.header')
 @endcomponent
-
 <body>
   <header>
     <h1>LUANA MATCHING</h1>

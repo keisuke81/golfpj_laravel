@@ -1,9 +1,3 @@
-<head>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="{{asset('css/style.css')}}" rel="stylesheet">
-    <link href="{{asset('css/reset.css')}}" rel="stylesheet">
-</head>
-
 @extends('layouts.app')
 
 @section('content')
@@ -67,7 +61,7 @@
                                     @if (Route::has('password.request'))
                                     <div>
                                         <a class="btn_small btn-link" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
+                                            {{ __('パスワードを忘れた') }}
                                         </a>
                                     </div>
                                     @endif
