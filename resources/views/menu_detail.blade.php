@@ -12,22 +12,26 @@
     <div class="content">
       <a href="/mypage">Mypage</a>
     </div>
+
+    <div>
+      <form method="POST" action="{{ route('logout') }}">ログアウト</form>
+    </div>
   </div>
   @endauth
 
   @guest
-  <div class="menu1_content">
-    <div class="content">
-      <a href="/home">Home</a>
+  <div class=" menu1_content">
+        <div class="content">
+          <a href="/home">Home</a>
+        </div>
+        <div class="content">
+          <a href="/register">Registration</a>
+        </div>
+        <div class="content">
+          <a href="/login">Login</a>
+        </div>
     </div>
-    <div class="content">
-      <a href="/register">Registration</a>
-    </div>
-    <div class="content">
-      <a href="/login">Login</a>
-    </div>
-  </div>
-  @endguest
+    @endguest
 </body>
 
 <style scoped>

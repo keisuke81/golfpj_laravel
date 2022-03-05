@@ -1,3 +1,4 @@
+
 @component('components.header')
 @endcomponent
 
@@ -20,6 +21,10 @@
 
       <div>
         <a class="btn" href="/mypage/registration_information">登録情報内容を確認する</a>
+      </div>
+
+      <div>
+        <a href="/logout_page" class="btn">ログアウト</a>
       </div>
     </div>
   </div>

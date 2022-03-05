@@ -79,4 +79,8 @@ class UserController extends Controller
         return redirect('/mypage/registration_information');
     }
 
+    public function showLogout(){
+        return view('logout_page');
+    }
+
 }

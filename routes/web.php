@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CompanionController;
 use App\Http\Controllers\Auth\LoginController;
-
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -118,5 +118,8 @@ Route::post('/chat/send',
 //チャット選択画面の表示//
 Route::get('/chat_select',
 [ChatController::class,'showChatselect']);
+
+Route::get('/logout_page',
+[UserController::class,'showLogout']);
 
 
