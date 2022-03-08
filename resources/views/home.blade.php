@@ -1,6 +1,11 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
 @component('components.header')
 @endcomponent
-
+<title>top_page</title>
+</head>
 <body>
     @component('components.menu')
     @endcomponent
