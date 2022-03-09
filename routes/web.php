@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LineLoginController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\OfferController;
 use Illuminate\Support\Facades\Route;
@@ -23,18 +24,23 @@ Route::get('/register', [UserController::class, 'index']);
 
 Auth::routes();
 
+//トップページの表示//
+Route::get('/',function () {
+        return view('welcome');
+    }
+);
 Route::get('/logout', [LoginController::class, 'destroy'])
     ->middleware('auth')
     ->name('logout');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/linelogin', [LineLoginController::class,'lineLogin'])->name('linelogin');
+Route::get('/callback', [LineLoginController::class, 'callback'])->name('callback');
 
 //メニューの表示//
 Route::get('/menu1',[OfferController::class, 'showMenu']);
 
-//トップページの表示//
-Route::get('/',
-[OfferController::class, 'index']);
 
 //日にちで誘うページの表示//
 Route::get('/offer',

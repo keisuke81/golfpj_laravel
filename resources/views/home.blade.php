@@ -1,15 +1,23 @@
-@component('components.header')
-@endcomponent
+@extends('layouts.app')
 
-<body>
-    @component('components.menu')
-    @endcomponent
-    <div class="wrapper">
-        <div>
-            <a class="btn" href="/offer_cast">キャストから探す</a>
-        </div>
-        <div>
-            <a class="btn" href="/offer">日程から探す</a>
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    {{ __('You are logged in!') }}
+                </div>
+            </div>
         </div>
     </div>
-</body>
+</div>
+@endsection
