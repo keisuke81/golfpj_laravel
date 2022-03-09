@@ -85,11 +85,11 @@ class LineLoginController extends Controller
 
         // ユーザー情報あるか確認
         $user = User::where('line_id', $profile->userId)->first();
-        dd($user);
 
         // あったらログイン
         if ($user) {
-            Auth::login($user);
+            $a = Auth::login($user);
+            dd($a);
             return redirect('/mypage');
 
             // なければ登録してからログイン
