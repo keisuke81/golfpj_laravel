@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -17,7 +15,6 @@
         </div>
         <div>
             <a class="btn" href="/offer">日程から探す</a>
->>>>>>> 1e76a731c3cbe6d4c0f4a4bdece00b4945d34a1e
         </div>
     </div>
 </body>
