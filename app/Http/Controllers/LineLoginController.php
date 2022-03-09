@@ -88,7 +88,7 @@ class LineLoginController extends Controller
 
         // あったらログイン
         if ($user) {
-            $a = Auth::login($user);
+            $a = Auth::id();
             dd($a);
             return redirect('/mypage');
 
@@ -99,7 +99,7 @@ class LineLoginController extends Controller
             $user->line_id = $profile->userId;
             $user->name = $profile->displayName;
             $user->save();
-            Auth::login($user);
+            Auth::id();
             return redirect('/');
         }
     }
