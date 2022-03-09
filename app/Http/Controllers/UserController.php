@@ -41,8 +41,7 @@ class UserController extends Controller
     //登録情報ページの表示//
     public function getRegistrationInformation(User $user_id){
 
-        $user_id -> middleware('auth:api');
-        dd($user_id);
+        $user_id = Auth::id();
         $registration = User::where('id', $user_id)->first();
 
         return view('registration_information')->with([
