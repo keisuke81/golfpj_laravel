@@ -33,19 +33,11 @@ class UserController extends Controller
         return view('register')->with(['member_id'=>$member_id]);
     }
 
-    public function __construct()
-    {
-        $this->middleware(['auth', 'verified'])->only(['getMypage']);
-    }
-    //マイページの表示//
-    public function getMypage(){
-        return view('mypage');
-    }
-
     //登録情報ページの表示//
     public function getRegistrationInformation(User $user_id){
 
         $user_id = Auth::id();
+        dd($user_id);
         $registration = User::where('id', $user_id)->first();
 
         return view('registration_information')->with([
