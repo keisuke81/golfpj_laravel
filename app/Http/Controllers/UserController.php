@@ -33,6 +33,10 @@ class UserController extends Controller
         return view('register')->with(['member_id'=>$member_id]);
     }
 
+    public function __construct()
+    {
+        $this->middleware(['auth', 'verified'])->only(['getMypage']);
+    }
     //マイページの表示//
     public function getMypage(){
         return view('mypage');
