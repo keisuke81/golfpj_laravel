@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CompanionController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/linelogin', [LineLoginController::class,'lineLogin'])->name('linelogin');
 Route::get('/callback', [LineLoginController::class, 'callback'])->name('callback');
+
 
 //メニューの表示//
 Route::get('/menu1',[OfferController::class, 'showMenu']);
