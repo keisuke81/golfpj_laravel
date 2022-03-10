@@ -28,7 +28,9 @@ class User extends Authenticatable
         'img_url',
         'score',
         'self_produce',
-        'message'
+        'message',
+        'provider',
+        'line_id'
     ];
 
     /**
