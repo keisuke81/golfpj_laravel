@@ -89,14 +89,14 @@ class LineLoginController extends Controller
     {
         $accessToken = $this->getAccessToken($request);
         $profile = $this->getProfile($accessToken);
+        dd($profile);
 
         // ユーザー情報あるか確認
         $user = User::where('line_id', $profile->userId)->first();
 
         // あったらログイン
         if ($user) {
-            $a = Auth::login($user); 
-            dd($a);  
+            Auth::login($user); 
             return redirect('/mypage');
 
             // なければ登録してからログイン
