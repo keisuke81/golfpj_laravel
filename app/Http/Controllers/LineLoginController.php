@@ -29,7 +29,7 @@ class LineLoginController extends Controller
         $state_uri = "&state=" . $state;
         $scope = "&scope=openid%20profile";
         $prompt = "&prompt=consent";
-        $nonce_uri = "&nonce=" .$nonce;
+        $nonce_uri = "&nonce=" . $nonce;
 
         $uri = $uri . $response_type . $client_id . $redirect_uri . $state_uri . $scope . $prompt . $nonce_uri;
 
@@ -95,8 +95,7 @@ class LineLoginController extends Controller
 
         // あったらログイン
         if ($user) {
-            $a = Auth::login($user);
-            dd($a);    
+            $a = Auth::login($user);   
             return redirect('/mypage');
 
             // なければ登録してからログイン
