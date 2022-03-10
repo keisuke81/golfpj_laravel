@@ -15,7 +15,7 @@ class LineLoginController extends Controller
         $this->client_secret = Config('services.line.client_secret');
         $this->redirect_url = Config('services.line.redirect');
     }
-    
+
     // Lineログイン画面を表示
     public function lineLogin()
     {
@@ -29,7 +29,7 @@ class LineLoginController extends Controller
         $state_uri = "&state=" . $state;
         $scope = "&scope=openid%20profile";
         $prompt = "&prompt=consent";
-        $nonce_uri = "&nonce=";
+        $nonce_uri = "&nonce=" .$nonce;
 
         $uri = $uri . $response_type . $client_id . $redirect_uri . $state_uri . $scope . $prompt . $nonce_uri;
 
