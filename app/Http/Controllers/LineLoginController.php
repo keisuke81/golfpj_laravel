@@ -95,7 +95,8 @@ class LineLoginController extends Controller
 
         // あったらログイン
         if (!empty($user)) {
-            Auth::login($user); 
+            $a = Auth::login($user); 
+            dd($a);
             return redirect('/mypage');
 
             // なければ登録してからログイン
