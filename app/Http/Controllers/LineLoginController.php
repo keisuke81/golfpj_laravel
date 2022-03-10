@@ -88,8 +88,7 @@ class LineLoginController extends Controller
 
         // あったらログイン
         if ($user) {
-            $a = Auth::id();
-            dd($a);
+            dd($user);    
             return redirect('/mypage');
 
             // なければ登録してからログイン
