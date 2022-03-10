@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Auth;
 
 class LineLoginController extends Controller
 {
+    public function __construct()
+    {
+        $this->client_id = Config('services.line.client_id');
+        $this->client_secret = Config('services.line.client_secret');
+        $this->redirect_url = Config('services.line.redirect');
+    }
+    
     // Lineログイン画面を表示
     public function lineLogin()
     {
