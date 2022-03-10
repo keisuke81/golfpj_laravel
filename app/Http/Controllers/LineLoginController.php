@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\Auth\Authenticatable;
 
 class LineLoginController extends Controller
 {
@@ -29,7 +30,7 @@ class LineLoginController extends Controller
         $state_uri = "&state=" . $state;
         $scope = "&scope=openid%20profile";
         $prompt = "&prompt=consent";
-        $nonce_uri = "&nonce=" . $nonce;
+        $nonce_uri = "&nonce=";
 
         $uri = $uri . $response_type . $client_id . $redirect_uri . $state_uri . $scope . $prompt . $nonce_uri;
 
@@ -95,9 +96,8 @@ class LineLoginController extends Controller
 
         // あったらログイン
         if (!empty($user)) {
-            $a = Auth::login($user); 
-            dd($a);
-            return redirect('/mypage');
+            Auth::login($user); 
+            return view('home');
 
             // なければ登録してからログイン
         } else {
@@ -107,7 +107,7 @@ class LineLoginController extends Controller
             $user->name = $profile->displayName;
             $user->save();
             Auth::id();
-            return redirect('/');
+            return view('home');
         }
     }
 }
