@@ -51,6 +51,7 @@ class UserController extends Controller
     public function profile_update($id, Request $request)
     {
         $user_id =$id;
+        dd($user_id);
 
         $param = [
             'nickname'=>$request->nickname,
