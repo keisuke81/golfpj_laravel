@@ -41,6 +41,7 @@ class UserController extends Controller
     //登録情報更新ページの表示//
     public function profile_edit(User $user_id){
         $user_id = Auth::id();
+        dd($user_id);
         $registration = User::where('id', $user_id)->first();
         dd($registration);
 
