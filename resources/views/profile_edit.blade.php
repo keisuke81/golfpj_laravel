@@ -6,7 +6,7 @@
   @endcomponent
   <a class="btn_small" href="/mypage">マイページに戻る</a>
 
-  <form action="/profile_update" method="post">
+  <form action="/profile_update/{{$user_id}}" method="post">
     @csrf
     <table class="table">
       <tr>
