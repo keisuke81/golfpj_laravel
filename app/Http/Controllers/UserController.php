@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ClientRequest;
 
 class UserController extends Controller
 {
@@ -45,7 +46,7 @@ class UserController extends Controller
     }
 
     //プロフィール更新時のDB更新//
-    public function profile_update(Request $request, $id)
+    public function profile_update(ClientRequest $request, $id)
     {
         $user = Auth::user();
         $user_id =
