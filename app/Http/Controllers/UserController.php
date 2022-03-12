@@ -63,7 +63,7 @@ class UserController extends Controller
 
         User::where('id', $user_id)->update($param);
 
-        return redirect('/mypage/registration_information/{id}');
+        return view('mypage');
     }
 
     public function showLogout(){
