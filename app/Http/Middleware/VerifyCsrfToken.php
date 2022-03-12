@@ -12,6 +12,6 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        'http://golfpj.herokuapp.com/profile_update/{user_id}'
+        'http://golfpj.herokuapp.com/profile_update'
     ];
 }
