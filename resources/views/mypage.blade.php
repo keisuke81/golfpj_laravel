@@ -8,6 +8,9 @@
   <div class="type_a">
     <div class="type_a_child">
       <div>
+        会員番号：{{$user_id}}
+      </div>
+      <div>
         <a class="btn" href="/mypage/offer_content">募集している内容を確認する</a>
       </div>
 
