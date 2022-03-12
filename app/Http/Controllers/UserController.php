@@ -45,10 +45,11 @@ class UserController extends Controller
     }
 
     //プロフィール更新時のDB更新//
-    public function profile_update(Request $request)
+    public function profile_update(Request $request, $id)
     {
         $user = Auth::user();
-        $user_id = Auth::id();
+        $user_id =
+        User::where('id', $id)->first();;
 
         $param = [
             'nickname'=>$request->nickname,
@@ -62,7 +63,7 @@ class UserController extends Controller
 
         User::where('id', $user_id)->update($param);
 
-        return redirect('/mypage/registration_information');
+        return redirect('/mypage/registration_information/{id}');
     }
 
     public function showLogout(){
