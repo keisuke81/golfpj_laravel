@@ -74,7 +74,7 @@ Route::post('/done',
 [OfferController::class,'Offer']);
 
 //マイページの表示//
-Route::get('/mypage/{user_id}',
+Route::get('/mypage',
 [UserController::class,'getMypage'])->name('getMypage');
 
 Route::get('/mypage/offer_content', 
