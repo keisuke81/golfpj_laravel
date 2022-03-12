@@ -23,7 +23,8 @@ class UserController extends Controller
     //マイページの表示//
     public function getMypage(){
 
-        return view('mypage');
+        $user_id = Auth::id();
+        return view('mypage')->with(['user_id' => $user_id]);
     }
 
     //登録情報ページの表示//
