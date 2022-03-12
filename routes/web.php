@@ -100,7 +100,7 @@ Route::get('/mypage/registration_information',
 [UserController::class,'getRegistrationInformation']);
 
 //登録情報更新ページの表示//
-Route::get('/mypage/registration_information/edit',
+Route::get('/mypage/registration_information/edit/{id}',
 [UserController::class,'profile_edit'])->name(('profile_edit'));
 
 //登録情報更新データの送信//
