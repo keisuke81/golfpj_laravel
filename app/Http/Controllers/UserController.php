@@ -46,7 +46,7 @@ class UserController extends Controller
     }
 
     //プロフィール更新時のDB更新//
-    public function profile_update(ClientRequest $request, $id)
+    public function profile_update(Request $request, $id)
     {
         $user = Auth::user();
         $user_id =
