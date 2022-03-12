@@ -20,9 +20,9 @@ class UserController extends Controller
         return view('menu_detail');
     }
     //マイページの表示//
-    public function getMypage(User $user_id){
-        $user_id = Auth::id();
-        return view('mypage')->with(['user_id'=> $user_id]);
+    public function getMypage(){
+
+        return view('mypage');
     }
 
     //登録情報ページの表示//
