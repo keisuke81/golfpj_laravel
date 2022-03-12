@@ -93,11 +93,12 @@ class LineLoginController extends Controller
 
         // ユーザー情報あるか確認
         $user = User::where('line_id', $profile->userId)->first();
+        $user_id = Auth::id();
 
         // あったらログイン
         if (!empty($user)) {
             Auth::login($user); 
-            return view('home');
+            return view('home')->with(['user_id' => $user_id]);
 
             // なければ登録してからログイン
         } else {
@@ -107,7 +108,7 @@ class LineLoginController extends Controller
             $user->name = $profile->displayName;
             $user->save();
             Auth::id();
-            return view('home');
+            return view('home')->with(['user_id' => $user_id]);
         }
     }
 }
