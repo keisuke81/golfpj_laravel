@@ -8,31 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function index()
-    {
-        $member_ids =User::select('member_id')->get();
-        $min = 10000000; $max = 99999999;
-
-        for ($i = $min; $i <= $max; $i++) {
-            while (true) {
-                /** 一時的な乱数を作成 */
-                $member_id = mt_rand($min, $max);
-                dd($member_id);
-
-                /*
-     * 乱数配列に含まれているならwhile続行、
-     * 含まれてないなら配列に代入してbreak
-     */
-                if (!in_array($member_id, $member_ids)) {
-                    break;
-                }
-            }
-            
-        }
-
-        return view('register')->with(['member_id'=>$member_id]);
-    }
-
     //マイページの表示//
     public function getMypage(){
         return view('mypage');
