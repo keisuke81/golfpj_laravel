@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    //メニューの表示//
+    public function showMenu(User $user_id)
+    {
+        $user_id = Auth::id();
+        return view('menu_detail');
+    }
     //マイページの表示//
     public function getMypage(User $user_id){
         $user_id = Auth::id();

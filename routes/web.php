@@ -40,7 +40,7 @@ Route::get('/callback', [LineLoginController::class, 'callback'])->name('callbac
 
 
 //メニューの表示//
-Route::get('/menu1',[OfferController::class, 'showMenu']);
+Route::get('/menu1',[UserController::class, 'showMenu']);
 
 
 //日にちで誘うページの表示//
