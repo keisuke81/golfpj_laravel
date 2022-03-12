@@ -10,6 +10,12 @@
     @csrf
     <table class="table">
       <tr>
+        <th>id</th>
+        <td>
+          <input type="hidden" name="id" value="{{$registration->id}}">
+        </td>
+      </tr>
+      <tr>
         <th>お名前</th>
         <td>
           {{$registration->name}}
