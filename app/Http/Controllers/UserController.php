@@ -46,11 +46,9 @@ class UserController extends Controller
     }
 
     //プロフィール更新時のDB更新//
-    public function profile_update(Request $request, $id)
+    public function profile_update(Request $request)
     {
-        $user = Auth::user();
-        $user_id =
-        User::where('id', $id)->first();;
+        $user_id =Auth::id();
 
         $param = [
             'nickname'=>$request->nickname,
