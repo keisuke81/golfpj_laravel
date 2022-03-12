@@ -4,6 +4,9 @@
 <body>
   @component('components.menu')
   @endcomponent
+  <div>
+    
+  </div>
   <div class="type_a">
     <p>プロフィールを更新しました。</p>
   </div>
