@@ -6,6 +6,8 @@
   @endcomponent
   <div class="type_a">
     <p>プロフィールを更新しました。</p>
-    <a href=""></a>
+  </div>
+  <div>
+    {{$user_id}}
   </div>
 </body>

@@ -42,7 +42,8 @@ class UserController extends Controller
         $registration = User::where('id', $user_id)->first();
 
         return view('profile_edit')->with([
-            'registration' => $registration
+            'registration' => $registration,
+            'user_id' => $user_id
         ]);
     }
 
