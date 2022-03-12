@@ -8,6 +8,6 @@
     <p>プロフィールを更新しました。</p>
   </div>
   <div>
-    {{$user_id}}
+    <a href="/mypage/{{$user_id}}">マイページに戻る</a>
   </div>
 </body>
