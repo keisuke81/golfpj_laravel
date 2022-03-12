@@ -32,6 +32,7 @@ class UserController extends Controller
 
         $user_id = Auth::id();
         $registration = User::where('id', $user_id)->first();
+        dd($registration);
 
         return view('registration_information')->with([
             'registration' => $registration,
@@ -43,7 +44,6 @@ class UserController extends Controller
         $user_id = Auth::id();
         dd($user_id);
         $registration = User::where('id', $user_id)->first();
-        dd($registration);
 
         return view('profile_edit')->with([
             'registration' => $registration,
