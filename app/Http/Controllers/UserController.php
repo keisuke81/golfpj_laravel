@@ -68,6 +68,12 @@ class UserController extends Controller
         return view('profile_update')->with(['user_id'=> $user_id]);
     }
 
+    public function showProfileUpdated($id){
+
+        $user_id = $id;
+        return view('profile_update')->with(['user_id'=>$user_id]);
+    }
+
     public function showLogout(){
         return view('logout_page');
     }
