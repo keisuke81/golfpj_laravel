@@ -48,11 +48,8 @@ class UserController extends Controller
     }
 
     //プロフィール更新時のDB更新//
-    public function profile_update($id, Request $request)
+    public function profile_update($user_id, Request $request)
     {
-        $user_id =$id;
-        dd($user_id);
-
         $param = [
             'nickname'=>$request->nickname,
             'email' => $request->email,
