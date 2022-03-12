@@ -32,7 +32,6 @@ class UserController extends Controller
 
         $user_id = Auth::id();
         $registration = User::where('id', $user_id)->first();
-        dd($registration);
 
         return view('registration_information')->with([
             'registration' => $registration,
@@ -40,7 +39,7 @@ class UserController extends Controller
         ]);
     }
     //登録情報更新ページの表示//
-    public function profile_edit(User $user_id){
+    public function profile_edit(){
         $user_id = Auth::id();
         dd($user_id);
         $registration = User::where('id', $user_id)->first();
