@@ -51,6 +51,7 @@ class UserController extends Controller
     public function profile_update(Request $request)
     {
         $user_id =Auth::id();
+        dd($user_id);
 
         $param = [
             'nickname'=>$request->nickname,
@@ -60,7 +61,6 @@ class UserController extends Controller
             'self_produce' => $request->self_produce,
             'message'=> $request->message,
         ];
-        dd($param);
         
 
         User::where('id', $user_id)->update($param);
