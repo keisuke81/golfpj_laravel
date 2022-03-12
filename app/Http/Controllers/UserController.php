@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function index(User $user_id)
+    {
+        $user_id = Auth::id();
+        return view('home')->with(['user_id' => $user_id]);
+    }
     //メニューの表示//
     public function showMenu(User $user_id)
     {
