@@ -96,7 +96,7 @@ Route::get('offer_search/date',
 [OfferController::class, 'getOfferSearchDate']);
 
 //（マイページ）登録情報ページの表示//
-Route::get('/mypage/registration_information',
+Route::get('/mypage/registration_information/{user_id}',
 [UserController::class,'getRegistrationInformation']);
 
 //登録情報更新ページの表示//
