@@ -104,7 +104,8 @@ Route::get('/mypage/registration_information/edit/{id}',
 [UserController::class,'profile_edit'])->name(('profile_edit'));
 
 //登録情報更新データの送信//
-Route::post('/profile_update',
+Route::post(
+    '/mypage/registration_information/edit/{id}/profile_update',
 [UserController::class,'profile_update']);
 
 //コンパニオンが応募する//

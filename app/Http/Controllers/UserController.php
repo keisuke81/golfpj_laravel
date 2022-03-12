@@ -50,7 +50,7 @@ class UserController extends Controller
 
         User::where('id', $user_id)->update($param);
 
-        return redirect('/mypage/registration_information');
+        return redirect('/mypage/registration_information')->with(['user_id' => $user_id]);
     }
 
     public function showLogout(){
