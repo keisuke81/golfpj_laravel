@@ -63,7 +63,7 @@ class UserController extends Controller
 
         User::where('id', $user_id)->update($param);
 
-        return view('mypage');
+        return view('profile_update');
     }
 
     public function showLogout(){
