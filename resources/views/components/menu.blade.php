@@ -12,6 +12,7 @@
         <li><a href="/mypage">マイページ</a></li>
       </ul>
     </nav>
+    <div class="hidden">{{$user_id}}</div>
   </header>
 </body>
 
