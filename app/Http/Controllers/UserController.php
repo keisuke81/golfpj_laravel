@@ -40,11 +40,9 @@ class UserController extends Controller
     //登録情報更新ページの表示//
     public function profile_edit($user_id){
         $registration = User::where('id', $user_id)->first();
-        dd($registration);
 
         return view('profile_edit')->with([
-            'registration' => $registration,
-            'user_id' => $user_id
+            'registration' => $registration
         ]);
     }
 
