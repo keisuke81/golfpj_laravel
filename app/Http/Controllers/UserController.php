@@ -35,14 +35,12 @@ class UserController extends Controller
 
         return view('registration_information')->with([
             'registration' => $registration,
-
         ]);
     }
     //登録情報更新ページの表示//
-    public function profile_edit(){
-        $user_id = Auth::id();
-        dd($user_id);
+    public function profile_edit($user_id){
         $registration = User::where('id', $user_id)->first();
+        dd($registration);
 
         return view('profile_edit')->with([
             'registration' => $registration,
