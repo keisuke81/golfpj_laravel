@@ -9,7 +9,7 @@
         <li><a href="/home">ホーム</a></li>
         <li><a href="/offer_cast">キャスト検索</a></li>
         <li><a href="/chat_select">チャット</a></li>
-        <li><a href="/mypage">マイページ</a></li>
+        <li><a href="/mypage/{$user_id}">マイページ</a></li>
       </ul>
     </nav>
   </header>
