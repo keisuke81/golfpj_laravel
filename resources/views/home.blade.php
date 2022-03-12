@@ -10,6 +10,9 @@
     @component('components.menu')
     @endcomponent
     <div class="wrapper">
+        <div class="hidden">
+            {{$user_id}}
+        </div>
         <div>
             <a class="btn" href="/offer_cast">キャストから探す</a>
         </div>
