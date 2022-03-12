@@ -9,8 +9,9 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     //マイページの表示//
-    public function getMypage(){
-        return view('mypage');
+    public function getMypage(User $user_id){
+        $user_id = Auth::id();
+        return view('mypage')->with(['user_id'=> $user_id]);
     }
 
     //登録情報ページの表示//
@@ -50,7 +51,7 @@ class UserController extends Controller
 
         User::where('id', $user_id)->update($param);
 
-        return redirect('/mypage/registration_information')->with(['user_id' => $user_id]);
+        return redirect('/mypage/registration_information');
     }
 
     public function showLogout(){

@@ -20,7 +20,7 @@
       </div>
 
       <div>
-        <a class="btn" href="/mypage/registration_information">登録情報内容を確認する</a>
+        <a class="btn" href="/mypage/registration_information/{{$user_id}}">登録情報内容を確認する</a>
       </div>
 
       <div>
