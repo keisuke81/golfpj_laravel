@@ -34,7 +34,8 @@ class UserController extends Controller
         $registration = User::where('id', $user_id)->first();
 
         return view('registration_information')->with([
-            'registration' => $registration
+            'registration' => $registration,
+            
         ]);
     }
     //登録情報更新ページの表示//
