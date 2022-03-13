@@ -32,7 +32,7 @@ class LineOAuthController extends Controller
             'client_id' => $this->client_id,
             'redirect_uri' => $this->callback_url,
             'state' => $csrf_token,
-            'scope' => '&scope=openid%20profile',
+            'scope' => 'profile openid',
         ];
         $query_str = http_build_query($query_data, '', '&');
         return redirect(self::LINE_OAUTH_URI . $query_str);
