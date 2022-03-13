@@ -20,7 +20,6 @@ class CompanionController extends Controller
 
         return view('offer_cast')->with([
             'items' => $items,
-            'user_id' => $user_id
         ]);
     }
 
