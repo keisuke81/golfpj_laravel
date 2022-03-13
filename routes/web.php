@@ -23,7 +23,6 @@ use Illuminate\Http\Request;
 //ユーザー登録画面の表示//
 Route::get('/register', [UserController::class, 'index']);
 
-Auth::routes();
 // LINEの認証画面に遷移
 Route::get('auth/line', 'Auth\LineOAuthController@redirectToProvider')->name('line.login');
 // 認証後にリダイレクトされるURL(コールバックURL)
