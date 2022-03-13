@@ -91,7 +91,6 @@ class LineLoginController extends Controller
     {
         $accessToken = $this->getAccessToken($request);
         $profile = $this->getProfile($accessToken);
-        dd($profile);
 
         // ユーザー情報あるか確認
         $user = User::where('line_id', $profile->userId)->first();
@@ -99,7 +98,8 @@ class LineLoginController extends Controller
 
         // あったらログイン
         if (!empty($user)) {
-            Auth::login($user); 
+            $a =Auth::login($user);
+            dd($a); 
             return view('mypage')->with(['user_id' => $user_id]);
 
             // なければ登録してからログイン
