@@ -47,7 +47,7 @@ class Kernel extends HttpKernel
             \Illuminate\Cookie\Midleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            'throttle:60,1',
+            'throttle:api',
             'bindings',
         ],
     ];
