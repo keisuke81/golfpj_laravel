@@ -7,9 +7,9 @@
     <nav class="gnav">
       <ul class="menu">
         <li><a href="/home/$user_id">ホーム</a></li>
-        <li><a href="/offer_cast/{{$user_id}}">キャスト検索</a></li>
-        <li><a href="/chat_select/{{$user_id}}">チャット</a></li>
-        <li><a href="/mypage/{{$user_id}}">マイページ</a></li>
+        <li><a href="/offer_cast">キャスト検索</a></li>
+        <li><a href="/chat_select">チャット</a></li>
+        <li><a href="/mypage">マイページ</a></li>
       </ul>
     </nav>
     <div class="hidden">{{$user_id}}</div>
