@@ -41,11 +41,12 @@ class CompanionController extends Controller
         ]);
     }
 
-    public function getDetail(Companion $id){
+    public function getDetail(Companion $id, $user_id){
         $item = Companion::find($id)->last();
 
         return view('detail')->with([
-            'item' => $item
+            'item' => $item,
+            'user_id' =>$user_id
         ]);
     }
 

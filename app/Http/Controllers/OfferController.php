@@ -25,8 +25,7 @@ class OfferController extends Controller
 
 
     //ゴルフに誘うページの表示//
-    public function ShowOffer(){
-        $user_id = Auth::id();
+    public function ShowOffer($user_id){
         return view('offer',[
             'user_id' => $user_id
         ]);
