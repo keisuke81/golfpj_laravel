@@ -23,7 +23,7 @@ use Illuminate\Http\Request;
 //ユーザー登録画面の表示//
 Route::get('/register', [UserController::class, 'index']);
 
-
+Auth::routes();
 
 //トップページの表示//
 Route::get('/',function () {
