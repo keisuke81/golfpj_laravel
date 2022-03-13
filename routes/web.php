@@ -56,7 +56,7 @@ Route::get('offer_cast_age',
 [CompanionController::class, 'ShowCastAge']);
 
 //キャストの詳細ページ表示//
-Route::get('profile/{id}/{user_id}',
+Route::get('profile/{id}',
 [CompanionController::class,'getDetail']);
 
 //キャストのフォロー//

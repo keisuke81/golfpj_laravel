@@ -37,7 +37,7 @@ class CompanionController extends Controller
         ]);
     }
 
-    public function getDetail(Companion $id, $user_id){
+    public function getDetail(Companion $id){
         $item = Companion::find($id)->last();
         $user_id = Auth::id();
 
