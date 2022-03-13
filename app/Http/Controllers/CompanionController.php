@@ -12,7 +12,7 @@ use Carbon\Carbon;
 class CompanionController extends Controller
 {
     //「キャストから誘う」のキャスト一覧表示//
-    public function ShowCast()
+    public function ShowCast($user_id)
     {
         $items = Companion::get();
         $birthday = Companion::select('birthday');
@@ -23,7 +23,7 @@ class CompanionController extends Controller
 
         return view('offer_cast')->with([
             'items' => $items,
-            
+            'user_id' => $user_id
         ]);
     }
 

@@ -48,7 +48,7 @@ Route::get('/offer',
 [OfferController::class, 'ShowOffer']);
 
 //キャストから誘うのページ表示//
-Route::get('offer_cast',
+Route::get('offer_cast/{user_id}',
 [CompanionController::class,'ShowCast']);
 
 //キャストから誘う＿年齢で絞る//
