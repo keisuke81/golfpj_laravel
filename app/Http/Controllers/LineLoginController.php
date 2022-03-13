@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Auth\Authenticatable;
+use GuzzleHttp\Client;
 
 class LineLoginController extends Controller
 {

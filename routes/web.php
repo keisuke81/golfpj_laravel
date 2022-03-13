@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LineOAuthController;
 use App\Http\Controllers\LineLoginController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\OfferController;
@@ -35,8 +36,8 @@ Route::get('/logout', [LoginController::class, 'destroy'])
 
 Route::get('/home', [UserController::class, 'index'])->name('home');
 
-Route::get('/linelogin', [LineLoginController::class,'lineLogin'])->name('linelogin');
-Route::get('/callback', [LineLoginController::class, 'callback'])->name('callback');
+Route::get('/linelogin', [LineOAuthController::class,'lineLogin'])->name('linelogin');
+Route::get('/callback', [LineOAuthController::class, 'callback'])->name('callback');
 
 
 //メニューの表示//
