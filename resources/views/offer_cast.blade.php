@@ -16,6 +16,7 @@
     </div>
   </div>
   <div class="wrapper">
+    <div class="hidden">{{$user_id}}</div>
     @foreach($items as $item)
     <div class="card">
 

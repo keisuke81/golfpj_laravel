@@ -17,9 +17,6 @@ class CompanionController extends Controller
         $items = Companion::get();
         $birthday = Companion::select('birthday');
         $today = date("Y-m-d");
-        
-        
-
 
         return view('offer_cast')->with([
             'items' => $items,
