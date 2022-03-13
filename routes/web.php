@@ -23,10 +23,7 @@ use Illuminate\Http\Request;
 //ユーザー登録画面の表示//
 Route::get('/register', [UserController::class, 'index']);
 
-// LINEの認証画面に遷移
-Route::get('auth/line', 'Auth\LineOAuthController@redirectToProvider')->name('line.login');
-// 認証後にリダイレクトされるURL(コールバックURL)
-Route::get('auth/line/callback', 'Auth\LineOAuthController@handleProviderCallback');
+
 
 //トップページの表示//
 Route::get('/',function () {
@@ -39,8 +36,8 @@ Route::get('/logout', [LoginController::class, 'destroy'])
 
 Route::get('/home', [UserController::class, 'index'])->name('home');
 
-Route::get('/linelogin', [LineOAuthController::class,'lineLogin'])->name('linelogin');
-Route::get('/callback', [LineOAuthController::class, 'callback'])->name('callback');
+Route::get('/linelogin', [LineLoginController::class,'lineLogin'])->name('linelogin');
+Route::get('/callback', [LineLoginController::class, 'callback'])->name('callback');
 
 
 //メニューの表示//
