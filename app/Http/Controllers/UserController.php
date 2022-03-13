@@ -14,16 +14,10 @@ class UserController extends Controller
         $user_id = Auth::id();
         return view('home')->with(['user_id' => $user_id]);
     }
-    //メニューの表示//
-    public function showMenu(User $user_id)
-    {
-        $user_id = Auth::id();
-        return view('menu_detail');
-    }
-    //マイページの表示//
-    public function getMypage(){
 
-        $user_id = Auth::id();
+    //マイページの表示//
+    public function getMypage($user_id){
+
         return view('mypage')->with(['user_id' => $user_id]);
     }
 
