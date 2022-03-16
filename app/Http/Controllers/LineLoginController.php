@@ -98,8 +98,6 @@ class LineLoginController extends Controller
 
         // あったらログイン
         if (!empty($user)) {
-            $a =Auth::login($user);
-            dd($a); 
             return view('login')->with(['user_id' => $user_id]);
 
             // なければ登録してからログイン
