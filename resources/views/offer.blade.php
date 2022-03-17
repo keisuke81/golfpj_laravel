@@ -2,7 +2,7 @@
 @endcomponent
 
 <body>
-  @component('components.menu')
+  @component('components.menu',['user_id' => $user_id])
   @endcomponent
   <div class="wrapper_block">
     <form action="/confirm" method="post">

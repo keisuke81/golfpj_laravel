@@ -2,7 +2,7 @@
 @endcomponent
 
 <body>
-  @component('components.menu')
+  @component('components.menu',['user_id' => $user_id])
   @endcomponent
   <a class="btn_small" href="/mypage">マイページに戻る</a>
 

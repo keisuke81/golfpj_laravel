@@ -2,7 +2,7 @@
 @endcomponent
 
 <body>
-  @component('components.menu')
+  @component('components.menu',['user_id' => $user_id])
   @endcomponent
   <h1>コンパニオン募集中</h1>
   <div>

@@ -2,11 +2,11 @@
 @endcomponent
 
 <body>
-  @component('components.menu')
+  @component('components.menu',['user_id' => $user_id])
   @endcomponent
   <h1>コンパニオン募集内容</h1>
   <div>
-    <a href="/mypage" class="btn_small">マイページへ戻る</a>
+    <a href="/mypage/{{$user_id}}" class="btn_small">マイページへ戻る</a>
   </div>
 
   @if(!isset($offers[0]))

@@ -2,7 +2,7 @@
 @endcomponent
 
 <body>
-  @component('components.menu')
+  @component('components.menu',['user_id' => $user_id])
   @endcomponent
   <div>
     <a class="btn_small" href="/offer_cast">コンパニオン一覧へ</a>
