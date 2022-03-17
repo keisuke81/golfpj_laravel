@@ -36,7 +36,7 @@ Route::get('/logout', [LoginController::class, 'destroy'])
     ->middleware('auth')
     ->name('logout');
 
-Route::get('/home', [UserController::class, 'index'])->name('home');
+Route::get('/home/{user_id}', [UserController::class, 'index'])->name('home');
 
 Route::get('/linelogin', [LineLoginController::class,'lineLogin'])->name('linelogin');
 Route::get('/callback', [LineLoginController::class, 'callback'])->name('callback');
