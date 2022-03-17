@@ -24,7 +24,6 @@ class UserController extends Controller
 
     //登録情報ページの表示//
     public function getRegistrationInformation($user_id){
-
         $user_id = Auth::id();
         $registration = User::where('id', $user_id)->first();
 

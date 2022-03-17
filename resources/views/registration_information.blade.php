@@ -68,7 +68,7 @@
       </table>
 
       <div>
-        <a class="btn" href="{{route('profile_edit', ['user_id' => $user_id])}}">プロフィールを更新</a>
+        <a class="btn" href="/mypage/registration_information/edit/{{$user_id}}">プロフィールを更新</a>
       </div>
     </div>
   </div>
