@@ -65,6 +65,7 @@ class CompanionController extends Controller
     {
         $member_id = $user_id;
         $companion_id = $id;
+        dd($member_id);
        
         Follow::create([
             'member_id' => $member_id,
