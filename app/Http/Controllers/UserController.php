@@ -17,6 +17,10 @@ class UserController extends Controller
 
     //マイページの表示//
     public function getMypage($user_id){
+        $user = User::where('id', $user_id)->first();
+        Auth::login($user);
+        $user_id = Auth::id();
+        dd($user_id);
 
         return view('mypage')->with(['user_id' => $user_id]);
     }
