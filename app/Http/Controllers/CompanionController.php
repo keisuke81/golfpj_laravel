@@ -61,13 +61,11 @@ class CompanionController extends Controller
 
 
     //お気に入り登録//
-    public function getFollow($id)
+    public function getFollow($id ,$user_id)
     {
         $user_id = Auth::id();
-        dd($user_id);
-        $member_id = $user_id;
        Follow::create([
-            'member_id' => $member_id,
+            'member_id' => $user_id,
             'companion_id' => $id,
         ]);
 
@@ -77,7 +75,6 @@ class CompanionController extends Controller
     //お気に入り解除//
     public function noFollow($id)
     {
-        $user_id = Auth::id();
         $follow = Follow::where('companion_id', $id)->where('member_id', $user_id)->first();
         $follow->delete();
 
