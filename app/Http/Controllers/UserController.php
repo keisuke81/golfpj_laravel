@@ -9,8 +9,7 @@ use App\Http\Requests\ClientRequest;
 
 class UserController extends Controller
 {
-    public function index(User $user_id)
-    {
+    public function index(User $user_id){
         $user_id = Auth::id();
 
         return view('home')->with(['user_id' => $user_id]);
@@ -18,8 +17,6 @@ class UserController extends Controller
 
     //マイページの表示//
     public function getMypage($user_id){
-        $user = User::where('id', $user_id)->first();
-        Auth::login($user);
         $user_id = Auth::id();
 
         return view('mypage')->with(['user_id' => $user_id]);
