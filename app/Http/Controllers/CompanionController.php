@@ -64,6 +64,7 @@ class CompanionController extends Controller
     public function getFollow($id)
     {
         $user_id = Auth::id();
+        dd($user_id);
         $member_id = $user_id;
        Follow::create([
             'member_id' => $member_id,
