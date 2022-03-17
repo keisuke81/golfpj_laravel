@@ -1,9 +1,8 @@
-
 @component('components.header')
 @endcomponent
 
 <body>
-  @component('components.menu')
+  @component('components.menu',['user_id' => $user_id])
   @endcomponent
   <div class="type_a">
     <div class="type_a_child">
