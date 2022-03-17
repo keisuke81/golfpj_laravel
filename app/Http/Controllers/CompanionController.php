@@ -17,9 +17,11 @@ class CompanionController extends Controller
         $items = Companion::get();
         $birthday = Companion::select('birthday');
         $today = date("Y-m-d");
+        $user_id = Auth::id();
 
         return view('offer_cast')->with([
             'items' => $items,
+            'user_id' => $user_id
         ]);
     }
 
@@ -30,10 +32,13 @@ class CompanionController extends Controller
 
         $items = Companion::wherebetween('age',[$min, $max] )->get();
 
+        $user_id = Auth::id();
+
         return view('offer_cast_age')->with([
             'items' => $items,
             'min' => $min,
-            'max' => $max
+            'max' => $max,
+            'user_id' => $user_id
         ]);
     }
 
