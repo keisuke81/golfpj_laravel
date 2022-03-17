@@ -68,7 +68,9 @@ class CompanionController extends Controller
             'companion_id' => $id,
         ]);
 
-        return redirect()->back()->with(['user_id'=>$user_id]);
+        return redirect()->back()->with([
+            'user_id'=>$user_id,
+            'id' => $id]);
     }
 
     //お気に入り解除//
