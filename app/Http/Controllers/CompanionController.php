@@ -63,16 +63,18 @@ class CompanionController extends Controller
     //お気に入り登録//
     public function getFollow($id, $user_id)
     {
-        dd($user_id);
-       Follow::create([
-            'member_id' => $user_id,
-            'companion_id' => $id,
+        $member_id = $user_id;
+        $companion_id = $id;
+       
+        Follow::create([
+            'member_id' => $member_id,
+            'companion_id' => $companion_id,
         ]);
         $user_id = Auth::login();
 
         return redirect()->back()->with([
-            'member_id'=>$user_id,
-            'companion_id' => $id]);
+            'member_id'=>$member_id,
+            'companion_id' => $companion_id]);
     }
 
     //お気に入り解除//
