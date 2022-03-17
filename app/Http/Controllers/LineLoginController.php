@@ -99,7 +99,7 @@ class LineLoginController extends Controller
         // あったらログイン
         if (!empty($user)) {
             Auth::login($user);
-            return view('auth.login');
+            return view('mypage');
 
             // なければ登録してからログイン
         } else {
@@ -109,7 +109,7 @@ class LineLoginController extends Controller
             $user->name = $profile->displayName;
             $user->save();
             Auth::login($user);
-            return view('auth.login');
+            return view('mypage');
         }
     }
 }
