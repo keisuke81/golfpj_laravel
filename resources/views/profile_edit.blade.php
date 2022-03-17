@@ -4,7 +4,7 @@
 <body>
   @component('components.menu',['user_id' => $user_id])
   @endcomponent
-  <a class="btn_small" href="/mypage">マイページに戻る</a>
+  <a class="btn_small" href="/mypage/{{$user_id}}">マイページに戻る</a>
   <div class="hidden">{{$user_id}}</div>
 
   <form action="/profile_update" method="post">

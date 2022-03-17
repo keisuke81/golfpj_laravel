@@ -3,6 +3,10 @@
   font-size: 0.5em;
 }
 
+.hidden{
+  display:none;
+}
+
 .h1{
   display: block;
   font-size: 1.2em;
