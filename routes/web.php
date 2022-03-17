@@ -63,10 +63,10 @@ Route::get('profile/{id}',
 [CompanionController::class,'getDetail']);
 
 //キャストのフォロー//
-Route::get('/follow/{id}/{user_id}', [CompanionController::class, 'getFollow'])->name('getFollow');
+Route::get('/follow/{id}', [CompanionController::class, 'getFollow'])->name('getFollow');
 
 //フォロー解除//
-Route::get('/noffollow/{id}/{user_id}', [CompanionController::class, 'noFollow'])->name('noFollow');
+Route::get('/noffollow/{id}', [CompanionController::class, 'noFollow'])->name('noFollow');
 
 //オファー確認ページの表示//
 Route::post('/confirm',
