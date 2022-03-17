@@ -8,6 +8,7 @@
     <div class="type_a_child">
       <h1 class="h1">プロフィール</h1>
       <table class="table">
+        <div class="hidden">{{$user_id}}</div>
         <tr>
           <th>お名前</th>
           <td>
