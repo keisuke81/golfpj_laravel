@@ -80,7 +80,7 @@ Route::post('/done',
 Route::get('/mypage/{user_id}',
 [UserController::class,'getMypage'])->name('getMypage');
 
-Route::get('/mypage/offer_content', 
+Route::get('/mypage/offer_content/{user_id}', 
 [OfferController::class,'getOfferContent']);
 
 Route::get('mypage/delete_offer/{id}',

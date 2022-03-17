@@ -89,7 +89,7 @@ class OfferController extends Controller
     }
 
     //募集内容確認ページの表示//
-    public function getOfferContent(Offer $user_id){
+    public function getOfferContent($user_id){
         $user_id = Auth::id();
         $offers = Offer::where('user_id', $user_id)->get();
 
