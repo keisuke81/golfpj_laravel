@@ -11,11 +11,11 @@
         会員番号：{{$user_id}}
       </div>
       <div>
-        <a class="btn" href="/mypage/offer_content">募集している内容を確認する</a>
+        <a class="btn" href="/mypage/offer_content/{{$user_id}}">募集している内容を確認する</a>
       </div>
 
       <div>
-        <a class="btn" href="/mypage/reserve_content">予約内容を確認する</a>
+        <a class="btn" href="/mypage/reserve_content/{{$user_id}}">予約内容を確認する</a>
       </div>
 
       <div>

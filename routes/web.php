@@ -86,7 +86,7 @@ Route::get('/mypage/offer_content/{user_id}',
 Route::get('mypage/delete_offer/{id}',
 [OfferController::class, 'delete_offer'])->name('delete_offer');
 
-Route::get('/mypage/reserve_content',[
+Route::get('/mypage/reserve_content/{user_id}',[
     OfferController::class, 'getReserveContent'
 ]);
 
