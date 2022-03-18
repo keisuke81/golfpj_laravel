@@ -71,7 +71,7 @@ class CompanionController extends Controller
        
         Follow::create($param);
 
-        return redirect()->back();
+        return back();
     }
 
     //お気に入り解除//
