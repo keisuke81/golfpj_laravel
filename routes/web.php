@@ -60,7 +60,7 @@ Route::get('offer_cast_age',
 
 //キャストの詳細ページ表示//
 Route::get('profile/{id}/{user_id}',
-[CompanionController::class,'getDetail']);
+[CompanionController::class,'getDetail'])->name('getDetail');
 
 //キャストのフォロー//
 Route::get('/follow/{id}/{user_id}', [CompanionController::class, 'getFollow'])->name('getFollow');
