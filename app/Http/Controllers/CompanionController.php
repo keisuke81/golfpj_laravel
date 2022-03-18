@@ -18,7 +18,6 @@ class CompanionController extends Controller
         $birthday = Companion::select('birthday');
         $today = date("Y-m-d");
         $user_id = Auth::id();
-        dd($user_id);
 
         return view('offer_cast')->with([
             'items' => $items,
@@ -64,20 +63,17 @@ class CompanionController extends Controller
     //お気に入り登録//
     public function getFollow($id)
     {
-
+        dd($id);
         $user_id = Auth::id();
-        $member_id = $user_id;
-        $companion_id = $id;
-        dd($member_id);
-       
-        Follow::create([
-            'member_id' => $member_id,
-            'companion_id' => $companion_id,
-        ]);
 
-        return redirect()->back()->with([
-            'member_id'=>$member_id,
-            'companion_id' => $companion_id]);
+        $param=[
+            'member_id' => $user_id,
+            'companion_id' => $id,
+        ];
+       
+        Follow::create($param);
+
+        return redirect()->back();
     }
 
     //お気に入り解除//
