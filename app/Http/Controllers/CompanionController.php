@@ -71,7 +71,7 @@ class CompanionController extends Controller
         Follow::create($param);
 
 
-        return redirect('profile/{{$id}}/{{$user_id}}');
+        return redirect('profile/{id}/{user_id}');
     }
 
     //お気に入り解除//
