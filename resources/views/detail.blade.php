@@ -26,18 +26,9 @@
 
       <div class="follows">
         @if($item->is_followed_by_auth_user())
-        <form action="{{ route('noFollow', ['id' => $item->id]) }}" method="post">
-          @csrf
-          <button class="btn black">フォロー解除
-            <input type="hidden" value="{{$user_id}}">
-          </button>
-        </form>
+        <a href="{{ route('noFollow', ['id' => $item->id]) }}" class="btn black">フォロー解除</a>
         @else
-        <form action="{{ route('getFollow', ['id' => $item->id]) }}" method="post"> 
-          <button class="btn white">フォローする
-            <input type="hidden" value="{{$user_id}}">
-          </button>
-        </form>  
+        <a href="{{ route('getFollow', ['id' => $item->id]) }}" class="btn white">フォローする</a>
         @endif
       </div>
 
