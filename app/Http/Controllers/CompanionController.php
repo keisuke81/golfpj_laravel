@@ -63,7 +63,6 @@ class CompanionController extends Controller
     //お気に入り登録//
     public function getFollow($id)
     {
-        dd($id);
         $user_id = Auth::id();
 
         $param=[
