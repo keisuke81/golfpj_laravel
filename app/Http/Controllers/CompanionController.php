@@ -63,6 +63,7 @@ class CompanionController extends Controller
     //お気に入り登録//
     public function getFollow(Request $request, $id)
     {
+        
         $member_id = $request;
         $companion_id = $id;
         dd($member_id);
