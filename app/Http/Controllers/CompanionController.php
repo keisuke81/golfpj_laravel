@@ -63,7 +63,8 @@ class CompanionController extends Controller
     //お気に入り登録//
     public function getFollow($id, $user_id)
     {
-
+        $item = Companion::find($id)->last();
+        
         $param=[
             'member_id' => $user_id,
             'companion_id' => $id,
@@ -71,7 +72,11 @@ class CompanionController extends Controller
        
         Follow::create($param);
 
-        return back();
+
+        return view('detail')->with([
+            'item' => $item,
+            'user_id' => $user_id
+        ]);
     }
 
     //お気に入り解除//
