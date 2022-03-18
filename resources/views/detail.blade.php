@@ -27,6 +27,7 @@
       <div class="follows">
         @if($item->is_followed_by_auth_user())
         <form action="{{ route('noFollow', ['id' => $item->id]) }}" method="post">
+          @csrf
           <button class="btn black">フォロー解除
             <input type="hidden" value="{{$user_id}}">
           </button>
