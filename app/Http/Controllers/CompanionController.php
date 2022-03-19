@@ -53,10 +53,10 @@ class CompanionController extends Controller
     }
 
     //ログイン時のみ動作有効//
-    public function __construct()
-    {
-        $this->middleware(['auth', 'verified'])->only(['getFllow', 'noFollow']);
-    }
+   // public function __construct()
+    //{
+    //    $this->middleware(['auth', 'verified'])->only(['getFllow', 'noFollow']);
+    //}
 
 
 
@@ -79,12 +79,9 @@ class CompanionController extends Controller
     //お気に入り解除//
     public function noFollow($id, $user_id)
     {
-        dd($user_id);
-        $user = User::where('id', $user_id)->get();
-        Auth::login($user);
         $follow = Follow::where('companion_id', $id)->where('member_id', $user_id)->first();
         $follow->delete();
 
-        return redirect()->back();
+        return redirect();
     }
 }
