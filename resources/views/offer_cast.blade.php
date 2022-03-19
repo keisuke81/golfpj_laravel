@@ -22,7 +22,7 @@
 
       <img class="content-img" src={{$item->img_url}} />
 
-      <a href="/profile/{{$item->id}}/{{$user_id}}" class="card_link">
+      <a href="/profile/{{$item->id}}" class="card_link">
         <p class="name_font">{{$item->nickname}}</p>
       </a>
       <div>
