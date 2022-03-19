@@ -70,7 +70,7 @@ class CompanionController extends Controller
        
         Follow::create($param);
 
-        return redirect()->route('getDetail')->with([
+        return redirect()->action('getDetail')->with([
             'id' => $id,
             'user_id' => $user_id
         ]);
