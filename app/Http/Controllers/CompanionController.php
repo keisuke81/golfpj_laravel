@@ -70,7 +70,7 @@ class CompanionController extends Controller
        
         Follow::create($param);
 
-        $user_id = Auth::login();
+        $user_id = Auth::id();
         dd($user_id);
         return redirect()->back();
     }
