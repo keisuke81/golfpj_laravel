@@ -35,14 +35,14 @@ class Companion extends Model
     //フォローボタンの切り替え//
     public function is_followed_by_auth_user()
     {
-        $id = Auth::id();
+        $user_id = Auth::id();
 
         $followers = array();
         foreach ($this->follows as $follow) {
             array_push($followers, $follow->member_id);
         }
 
-        if (in_array($id, $followers)) {
+        if (in_array($user_id, $followers)) {
             return true;
         } else {
             return false;
