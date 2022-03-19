@@ -8,6 +8,7 @@ use App\Models\Companion;
 use App\Models\Follow;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use phpDocumentor\Reflection\DocBlock\Tags\Author;
 
 class CompanionController extends Controller
 {
@@ -61,8 +62,9 @@ class CompanionController extends Controller
 
 
     //お気に入り登録//
-    public function getFollow($id, $user_id)
+    public function getFollow($id)
     {
+        $user_id = Auth::id();
         $param=[
             'member_id' => $user_id,
             'companion_id' => $id,
