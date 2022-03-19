@@ -81,6 +81,7 @@ class CompanionController extends Controller
     {
         $follow = Follow::where('companion_id', $id)->where('member_id', $user_id)->first();
         $follow->delete();
+        dd($follow);
 
         return redirect();
     }
