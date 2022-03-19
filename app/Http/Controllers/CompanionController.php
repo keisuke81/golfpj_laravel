@@ -71,9 +71,7 @@ class CompanionController extends Controller
         Follow::create($param);
 
         return redirect()->action('CompanionController@getDetail',[
-            'id' => $id,
-            'user_id' => $user_id
-        ]);
+            'id' => $id,],['user_id' => $user_id]);
     }
 
     //お気に入り解除//
