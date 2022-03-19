@@ -70,10 +70,7 @@ class CompanionController extends Controller
        
         Follow::create($param);
 
-        return back()->with([
-            'id' => $id,
-            'user_id' => $user_id
-        ]);
+        return back();
     }
 
     //お気に入り解除//
