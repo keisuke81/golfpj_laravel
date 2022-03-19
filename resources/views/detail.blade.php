@@ -24,7 +24,7 @@
         </div>
       </div>
 
-      <div class="follows">
+      <div class="follows hidden">
         @if($item->is_followed_by_auth_user())
         <a href="{{ route('noFollow', ['id' => $item->id]) }}" class="btn black">フォロー解除</a>
         @else
