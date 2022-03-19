@@ -70,7 +70,6 @@ class CompanionController extends Controller
        
         Follow::create($param);
 
-
         return redirect()->route('getDetail')->with([
             'id' => $id,
             'user_id' => $user_id
@@ -80,10 +79,11 @@ class CompanionController extends Controller
     //お気に入り解除//
     public function noFollow($id, $user_id)
     {
+        $user = User::where('id', $user_id)->get();
+        Auth::login($user);
         $follow = Follow::where('companion_id', $id)->where('member_id', $user_id)->first();
         $follow->delete();
 
         return redirect()->back();
     }
-
 }
