@@ -23,6 +23,17 @@ class OfferController extends Controller
         $this->middleware(['auth', 'verified'])->only(['ShowOffer']);
     }
 
+    //showInvite
+    public function showInvite($id){
+        $user_id = Auth::id();
+        $companion_id = $id;
+
+        return view('invite')->with([
+            'user_id'=>$user_id,
+            'companion_id'=>$companion_id
+        ]);
+    }
+
 
     //ゴルフに誘うページの表示//
     public function ShowOffer($user_id){

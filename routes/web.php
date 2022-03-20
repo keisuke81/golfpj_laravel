@@ -95,6 +95,10 @@ Route::get('/mypage/reserve_content/{user_id}',[
     OfferController::class, 'getReserveContent'
 ]);
 
+//コンパニオンをお誘いする
+Route::get('invite_page/{id}',
+[OfferController::class,'showInvite'])->name('showInvite');
+
 //コンパニオン用検索ページの表示//
 Route::get('offer_search',
 [OfferController::class, 'getOfferSearch']);

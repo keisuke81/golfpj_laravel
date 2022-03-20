@@ -33,7 +33,7 @@
       </div>
 
       <div class="chat">
-        <a class="btn" href="/chat/{{$item->id}}">お誘いする</a>
+        <a class="btn" href="/invite_page/{{$item->id}}">お誘いする</a>
       </div>
     </div>
   </div>
