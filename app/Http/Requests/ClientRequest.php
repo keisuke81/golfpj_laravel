@@ -25,7 +25,6 @@ class ClientRequest extends FormRequest
     {
         return [
             'area_id' => 'required',
-            'golf_course' => 'required',
             'date' => 'required',
             'start_at' => 'required',
             'num_of_players_men' => 'required',

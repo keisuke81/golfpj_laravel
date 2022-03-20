@@ -10,6 +10,7 @@ class Offer extends Model
     use HasFactory;
     protected $fillable =[
         'user_id',
+        'companion_id',
         'area_id',
         'golf_course',
         'date',
